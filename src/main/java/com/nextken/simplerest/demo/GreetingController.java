@@ -23,22 +23,21 @@ public class GreetingController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
     public static final Logger LOGGER = Logger.getLogger(GreetingController.class.getName());
+    ObjectMapper mapper = new ObjectMapper();
+    RestTemplate restTemplate = new RestTemplate();
 
     @GetMapping("/greeting")
     public ResponseEntity<Object> getController() {
-        JSONParser parser = new JSONParser();
         JSONObject jsonObject = new JSONObject();
-        ObjectMapper mapper = new ObjectMapper();
+
         //https://raw.githubusercontent.com/yilmazerd/simplerest01/nextken-000/src/main/resources/template1.json
-        RestTemplate restTemplate = new RestTemplate();
+
         String resourceURL = "https://raw.githubusercontent.com/yilmazerd/simplerest01/nextken-000/src/main/resources/template1.json";
         ResponseEntity<String> response  = restTemplate.getForEntity(resourceURL, String.class);
         JsonNode root = null;
         try {
-            //Object obj = parser.parse(new FileReader("/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/src/main/resources/template1.json"));
-            //Object obj = mapper.readTree(response.getBody());
+
             LOGGER.log(Level.INFO,"Converted object");
-            //jsonObject = (JSONObject) obj;
             root = mapper.readTree(response.getBody());
             LOGGER.log(Level.INFO,"Got JSON");
             LOGGER.log(Level.INFO,jsonObject.toString());
