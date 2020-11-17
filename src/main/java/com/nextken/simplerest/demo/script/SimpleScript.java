@@ -1,7 +1,8 @@
-package com.nextken.simplerest.demo;
+package com.nextken.simplerest.demo.script;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nextken.simplerest.demo.GreetingController;
 import net.minidev.json.JSONObject;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,21 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@RestController
-public class GreetingController {
+public class SimpleScript {
 
+
+
+
+    public static void main(String[] args) {
+        System.out.println("Test\n");
+        System.out.println("Test\n");
+        System.out.println("Test\n");
+        Somet s = new Somet();
+        s.getController();
+    }
+}
+
+class Somet {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
     public static final Logger LOGGER = Logger.getLogger(GreetingController.class.getName());
@@ -25,51 +38,50 @@ public class GreetingController {
     JSONObject jsonObject = new JSONObject();
     JsonNode root = null;
     HttpHeaders responseHeaders = new HttpHeaders();
-
-    @GetMapping("/greeting")
     public ResponseEntity<Object> getController() {
 
-        //String resourceURL = "https://raw.githubusercontent.com/yilmazerd/simplerest01/nextken-000/src/main/resources/template1.json";
-        //String resourceURL = "https://tools.learningcontainer.com/sample-json.json";
         String resourceURL = "http://www.sci.utah.edu/~macleod/docs/txt2html/sample.txt";
         ResponseEntity<String> response  = restTemplate.getForEntity(resourceURL, String.class);
-// Set the response for JSON BODY
         Object responseBody = getResponseBody(response, ResponseType.TEXT);
 
-// Set Response headers
         responseHeaders.set(
                 "Example-Header-Sample", "This-is-my-sample"
         );
+
+        System.out.println(responseBody.toString());
 
         return ResponseEntity.ok()
                 .headers(responseHeaders)
                 .body(responseBody);
     }
 
-Object getResponseBody(ResponseEntity<String> response, ResponseType responseType) {
-    Object object = new Object();
-    switch (responseType) {
-        case JSON:
-            try {
-                LOGGER.log(Level.INFO,"Converted object");
-                root = mapper.readTree(response.getBody());
-                object = root;
-                LOGGER.log(Level.INFO,"Got JSON");
-                LOGGER.log(Level.INFO,jsonObject.toString());
-            } catch (Exception e) {
-                LOGGER.log(Level.INFO,"Got Exception" + e.toString());
-            }
-        case TEXT:
-            try {
-                object = response.getBody();
-                LOGGER.log(Level.INFO,"Using Text");
-            } catch (Exception e) {
-                LOGGER.log(Level.INFO,"Error converting text" + e.toString());
-            }
-    }
+    Object getResponseBody(ResponseEntity<String> response, ResponseType responseType) {
+        Object object = new Object();
+        switch (responseType) {
+            case JSON:
+                try {
+                    LOGGER.log(Level.INFO,"Converted object");
+                    root = mapper.readTree(response.getBody());
+                    object = root;
+                    LOGGER.log(Level.INFO,"Got JSON");
+                    LOGGER.log(Level.INFO,jsonObject.toString());
+                } catch (Exception e) {
+                    LOGGER.log(Level.INFO,"Got Exception" + e.toString());
+                }
+            case TEXT:
+                try {
+                    object = response.getBody();
+                    LOGGER.log(Level.INFO,"Using Text");
+                } catch (Exception e) {
+                    LOGGER.log(Level.INFO,"Error converting text" + e.toString());
+                }
+        }
 
-    return object;
-}
+        return object;
+    }
+};
+
+
 
 enum ResponseType{
     JSON,
@@ -78,20 +90,20 @@ enum ResponseType{
 
 class Content {
 
-        private String contentUrl;
-        private ResponseType responseType;
-        private int httpStatus = 200;
-        private Map<String, String> headers;
+    private String contentUrl;
+    private ResponseType responseType;
+    private int httpStatus = 200;
+    private Map<String, String> headers;
 
-        Content(String contentUrl, ResponseType responseType) {
-            this.contentUrl = contentUrl;
-            this.responseType = responseType;
-        }
-        Content(String contentUrl, ResponseType responseType, int httpStatus){
-            this.contentUrl = contentUrl;
-            this.responseType = responseType;
-            this.httpStatus = httpStatus;
-        }
+    Content(String contentUrl, ResponseType responseType) {
+        this.contentUrl = contentUrl;
+        this.responseType = responseType;
+    }
+    Content(String contentUrl, ResponseType responseType, int httpStatus){
+        this.contentUrl = contentUrl;
+        this.responseType = responseType;
+        this.httpStatus = httpStatus;
+    }
 
     Content(String contentUrl, ResponseType responseType, int httpStatus, Map<String, String> stringStringMap){
         this.contentUrl = contentUrl;
@@ -128,4 +140,4 @@ class Content {
 
 }
 
-}
+
