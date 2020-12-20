@@ -6,7 +6,17 @@ public class JavaRunner {
 
     public static final String requestData = "3";
 
-    public static void main(String[] args) throws IOException {
+    public static void main (String[] args) throws IOException{
+        JavaRunner jr = new JavaRunner();
+        for (int i = 0; i <10 ; i++) {
+            zz();
+        }
+    }
+    public static void zz() throws IOException {
+
+
+        long start = System.currentTimeMillis();
+
         // 1. Create a file
         try {
             File myObj = new File("filename.txt");
@@ -53,7 +63,7 @@ public class JavaRunner {
             if (exitVal == 0) {
                 System.out.println("Success!");
                 System.out.println(output);
-                System.exit(0);
+                //System.exit(0);
             } else {
                 //abnormal...
             }
@@ -66,5 +76,10 @@ public class JavaRunner {
 
 
         // 3. Read the text file and return the result here
+
+        // logs
+        long finish = System.currentTimeMillis();
+        long timeElapsed = finish - start;
+        System.out.println("total time " + timeElapsed);
     }
 }

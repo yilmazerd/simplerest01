@@ -1,0 +1,27 @@
+@startuml
+
+class CodeBlock {
+  - String : code
+  - UUID: codeBlockId
+  - Compiler <Enum>: compiler
+  - Instant: timeStamp
+  -- Methods --
+  + String getCustomerCode()
+  + UUID getId()
+  -- Builder --
+  + withCode (String code) <Required>
+  + withId (UUID id) <Optional>
+  + withCompiler (Compiler c) <Required>
+  + withTimeStamp (Instant i) <Optional>
+}
+
+
+class CBRequest <POJO> {
+  - String : code
+  - String : userKey
+  - String : userSecondary
+  - String : Compiler
+}
+
+
+@enduml

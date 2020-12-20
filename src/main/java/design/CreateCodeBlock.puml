@@ -1,0 +1,33 @@
+@startuml
+
+    actor user
+    participant "cbc: CBController" as cbc
+    participant "cbs: CBService" as cbs
+        participant "cbr: CBRepository" as cbr
+    participant "cbv: CBValidator" as cbv
+
+
+    user -> cbc: CodeRequest
+
+    title Caching a codeBlock
+    header
+    Explains how  a codeblock is cached
+    endheader
+
+    cbc->cbs: create(CodeRequest)
+    cbs->cbv: validate(CodeRequest)
+    cbs<-cbv: validate(CodeRequest)
+    cbs->cbs:
+            note over cbs
+                Incase of an error, return to controller.
+            end note
+    cbs->cbs: Build CodeRequest
+    cbs->cbr: create(CodeRequest)
+    cbr->cbs: void
+    cbs->cbs: CBResponseBuilder.build(CodeBlock)
+    cbc<-cbs: CBResponse
+    user<-cbc: CBResponse
+
+
+
+    @enduml
