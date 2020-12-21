@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import net.minidev.json.JSONObject;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -32,6 +34,28 @@ public class GreetingController {
         //String resourceURL = "https://raw.githubusercontent.com/yilmazerd/simplerest01/nextken-000/src/main/resources/template1.json";
         //String resourceURL = "https://tools.learningcontainer.com/sample-json.json";
         String resourceURL = "http://www.sci.utah.edu/~macleod/docs/txt2html/sample.txt";
+        ResponseEntity<String> response  = restTemplate.getForEntity(resourceURL, String.class);
+// Set the response for JSON BODY
+        Object responseBody = getResponseBody(response, ResponseType.TEXT);
+
+// Set Response headers
+        responseHeaders.set(
+                "Example-Header-Sample", "This-is-my-sample"
+        );
+
+        return ResponseEntity.ok()
+                .headers(responseHeaders)
+                .body(responseBody);
+    }
+
+
+    @PostMapping("/greetPost")
+    @CrossOrigin(origins = "*")
+    public ResponseEntity<Object> postController() {
+
+        //String resourceURL = "https://raw.githubusercontent.com/yilmazerd/simplerest01/nextken-000/src/main/resources/template1.json";
+        //String resourceURL = "https://tools.learningcontainer.com/sample-json.json";
+        String resourceURL = "http://help.websiteos.com/websiteos/example_of_a_simple_html_page.htm";
         ResponseEntity<String> response  = restTemplate.getForEntity(resourceURL, String.class);
 // Set the response for JSON BODY
         Object responseBody = getResponseBody(response, ResponseType.TEXT);

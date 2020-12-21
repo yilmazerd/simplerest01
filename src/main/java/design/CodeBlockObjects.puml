@@ -18,10 +18,18 @@ class CodeBlock {
 
 class CBRequest <POJO> {
   - String : code
-  - String : userKey
+  - String : userPrimaryKey
   - String : userSecondary
   - String : Compiler
 }
+
+
+class CBResponse <POJO> {
+  - String : url
+  - CBResponseError : cbResponseError
+}
+
+
 
 
 @enduml

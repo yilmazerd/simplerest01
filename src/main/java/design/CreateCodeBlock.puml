@@ -7,22 +7,22 @@
     participant "cbv: CBValidator" as cbv
 
 
-    user -> cbc: CodeRequest
+    user -> cbc: CBRequest (POST)
 
-    title Caching a codeBlock
+    title Caching a codeBlock (Formation Subsystem)
     header
     Explains how  a codeblock is cached
     endheader
 
-    cbc->cbs: create(CodeRequest)
-    cbs->cbv: validate(CodeRequest)
-    cbs<-cbv: validate(CodeRequest)
+    cbc->cbs: create(CBRequest)
+    cbs->cbv: validate(CBRequest)
+    cbs<-cbv: validate(CBRequest)
     cbs->cbs:
             note over cbs
                 Incase of an error, return to controller.
             end note
-    cbs->cbs: Build CodeRequest
-    cbs->cbr: create(CodeRequest)
+    cbs->cbs: Build CBRequest
+    cbs->cbr: create(CBRequest)
     cbr->cbs: void
     cbs->cbs: CBResponseBuilder.build(CodeBlock)
     cbc<-cbs: CBResponse

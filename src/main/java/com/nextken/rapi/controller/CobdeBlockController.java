@@ -1,14 +1,15 @@
-package com.nextken.rapi;
+package com.nextken.rapi.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nextken.rapi.models.CBRequest;
+import com.nextken.rapi.models.CBResponse;
+import com.nextken.rapi.service.CodeBlockService;
 import net.minidev.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
@@ -19,12 +20,22 @@ import java.util.logging.Logger;
 @RestController
 public class CobdeBlockController {
 
-    @PostMapping("/formation/codeblock")
-    public ResponseEntity<String> postFormationController() {
+    @Autowired
+    CodeBlockService codeBlockService;
+
+    @PostMapping(path = "/formation/codeblock", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) {
+        CBResponse cbResponse = codeBlockService.create(cbRequest);
         return ResponseEntity.ok()
-                .body("s");
+                .body(cbResponse);
     }
 
+    /*
+    @PostMapping(path = "/members", consumes = "application/json", produces = "application/json")
+public void addMember(@RequestBody Member member) {
+    //code
+}
+     */
 
 
     // TODO: Erase following

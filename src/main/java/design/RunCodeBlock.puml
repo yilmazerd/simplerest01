@@ -1,33 +1,16 @@
 @startuml
 
     actor user
-    participant "cbc: CBController" as cbc
-    participant "cbs: CBService" as cbs
-        participant "cbr: CBRepository" as cbr
-    participant "cbv: CBValidator" as cbv
+    participant "rqs: CodeRequestSubsystems" as rqs
+    participant "cqs: CodePerformSubsystem" as cbs
 
-
-    user -> cbc: CBRequest
-
-    title Caching a codeBlock
-    header
-    Explains how  a codeblock is cached
-    endheader
-
-    cbc->cbs: create(CBRequest)
-    cbs->cbv: validate(CBRequest)
-    cbs<-cbv: validate(CBRequest)
-    cbs->cbs:
-            note over cbs
-                Incase of an error, return to controller.
-            end note
-    cbs->cbs: Build CBRequest
-    cbs->cbr: create(CBRequest)
-    cbr->cbs: void
-    cbs->cbs: CBResponseBuilder.build(CodeBlock)
-    cbc<-cbs: CBResponse
-    user<-cbc: CBResponse
-
-
+    user -> rqs : CBrequest
+    user <- rqs : CBResponse
+    user -> cbs : CPrequest
+    cbs -> rqs  : <getCB>
+    rqs -> cbs  : CodeBlock
+    cbs -> cbs : <execture>
+    cbs -> cbs : <build response>
+    cbs -> user : CPResponse
 
     @enduml
