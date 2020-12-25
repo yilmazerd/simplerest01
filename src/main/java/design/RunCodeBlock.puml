@@ -1,0 +1,16 @@
+@startuml
+
+    actor user
+    participant "rqs: CodeRequestSubsystems" as rqs
+    participant "cqs: CodePerformSubsystem" as cbs
+
+    user -> rqs : CBrequest
+    user <- rqs : CBResponse
+    user -> cbs : CPrequest
+    cbs -> rqs  : <getCB>
+    rqs -> cbs  : CodeBlock
+    cbs -> cbs : <execture>
+    cbs -> cbs : <build response>
+    cbs -> user : CPResponse
+
+    @enduml

@@ -1,14 +1,17 @@
-package com.nextken.simplerest.demo;
+package com.nextken.rapi.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nextken.rapi.models.CBRequest;
+import com.nextken.rapi.models.CBResponse;
+import com.nextken.rapi.models.CBResponseError;
+import com.nextken.rapi.service.CodeBlockService;
 import net.minidev.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
@@ -17,11 +20,39 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @RestController
-public class GreetingController {
+public class CobdeBlockController {
 
+    @Autowired
+    CodeBlockService codeBlockService;
+
+    @PostMapping(path = "/formation/codeblock", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) throws Exception{
+        CBResponse cbResponse;
+        String errorStatement = null;
+        if (cbRequest == null) {
+            errorStatement += "Invalid entry/n";
+        } else {
+            if (cbRequest.getCode() == null) {
+                errorStatement += "Invalid input/n";
+            }
+        }
+
+        if (errorStatement!=null){
+            CBResponseError cbResponseError = new CBResponseError(errorStatement);
+            cbResponse = new CBResponse(cbResponseError);
+            return ResponseEntity.ok()
+                    .body(cbResponse);
+        }
+
+        cbResponse = codeBlockService.create(cbRequest);
+        return ResponseEntity.ok()
+                .body(cbResponse);
+    }
+
+    // TODO: Erase everything below this line
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
-    public static final Logger LOGGER = Logger.getLogger(GreetingController.class.getName());
+    public static final Logger LOGGER = Logger.getLogger(CobdeBlockController.class.getName());
     ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
     JSONObject jsonObject = new JSONObject();
@@ -47,6 +78,7 @@ public class GreetingController {
                 .headers(responseHeaders)
                 .body(responseBody);
     }
+
 
 
     @PostMapping("/greetPost")
