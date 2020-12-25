@@ -9,6 +9,11 @@ public class HelloUniverse {
 
         // 2. Pass the request into the custom java module, get the response
         File requestObject;
+        System.out.println("Sample Log - 1");
+        System.out.println("Sample Log - 2");
+        System.out.println("Sample Log - 3");
+        System.out.println("Sample Log - 4");
+
 
 
         // 3. save the response to a file

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.util.UUID;
 
 @Service
 public class CodeBlockService {
@@ -38,6 +39,14 @@ public class CodeBlockService {
         codeBlockRepository.create(codeBlock);
 
         // Response
-        return new CBResponse("null", new CBResponseError("none"));
+        return new CBResponse(codeBlock.getCodeBlockId().toString(), new CBResponseError(""));
+    }
+
+    /*
+    Read CodeBlock from repository
+     */
+    public CodeBlock read(UUID codeBlockId) {
+        // Repo
+        return codeBlockRepository.read(codeBlockId);
     }
 }

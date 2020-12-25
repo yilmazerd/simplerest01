@@ -1,26 +1,38 @@
-package com.nextken.simplerest.demo.javarunner;
+package com.nextken.rapi.service;
 
+import com.nextken.rapi.models.*;
+import com.nextken.rapi.repo.CodeBlockRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.util.UUID;
 
-public class JavaRunner {
+@Service
+public class RunService {
 
-    public static final String requestData = "3";
+    @Autowired
+    CodeBlockService codeBlockService;
 
-    public static void main (String[] args) throws IOException{
-        JavaRunner jr = new JavaRunner();
-        for (int i = 0; i <10 ; i++) {
-            zz();
-        }
+    public RunService() { };
+
+    public Object run(RunRequest runRequest){
+
+        // 1. Read raw code from repository
+        CodeBlock codeBlock = codeBlockService.read(runRequest.getCodeBlockId());
+        // 2. Out of raw code, create the executable code
+        createExecutableCode(codeBlock);
+        // 3. Depening on the compiler, execute the new code
+        String logs = executeCode(codeBlock.getCodeBlockId());
+        // 4. Collect the results and return
+        return logs;
     }
-    public static void zz() throws IOException {
 
-
-        long start = System.currentTimeMillis();
-
-        // 1. Create a file
+    private void createExecutableCode(CodeBlock codeBlock){
+        // TODO: Fix the file extension with compiler
+        String fileName = codeBlock.getCodeBlockId().toString() + ".java";
         try {
-            File myObj = new File("filename1.txt");
+            File myObj = new File(fileName);
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
             } else {
@@ -31,26 +43,24 @@ public class JavaRunner {
             e.printStackTrace();
         }
 
-        // 2. Write request data to that file
         try {
-            FileWriter myWriter = new FileWriter("src/main/java/com/nextken/simplerest/demo/javarunner/request1.txt");
-            myWriter.write(requestData);
+            FileWriter myWriter = new FileWriter(fileName);
+            myWriter.write(codeBlock.getCode());
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
 
-        // 3. Run a command line that runs 1 page java code, that code should read from a text file and output to a text file as well
+    private String executeCode(UUID fileName) {
         ProcessBuilder processBuilder = new ProcessBuilder();
-        //processBuilder.command("bash", "-c", "java /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/src/main/java/com/nextken/simplerest/demo/javarunner/HelloUniverse.java ");
-        processBuilder.command("bash", "-c", "java src/main/java/com/nextken/simplerest/demo/javarunner/HelloUniverse.java ");
+        processBuilder.command("bash", "-c", "java " +fileName + ".java ");
+        StringBuilder output = new StringBuilder();
         try {
 
             Process process = processBuilder.start();
-
-            StringBuilder output = new StringBuilder();
 
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(process.getInputStream()));
@@ -74,13 +84,6 @@ public class JavaRunner {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
-        // 3. Read the text file and return the result here
-
-        // logs
-        long finish = System.currentTimeMillis();
-        long timeElapsed = finish - start;
-        System.out.println("total time " + timeElapsed);
+        return output.toString();
     }
 }

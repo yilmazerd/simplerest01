@@ -4,11 +4,13 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nextken.rapi.models.CBRequest;
 import com.nextken.rapi.models.CBResponse;
+import com.nextken.rapi.models.CBResponseError;
 import com.nextken.rapi.service.CodeBlockService;
 import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -24,21 +26,30 @@ public class CobdeBlockController {
     CodeBlockService codeBlockService;
 
     @PostMapping(path = "/formation/codeblock", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) {
-        CBResponse cbResponse = codeBlockService.create(cbRequest);
+    public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) throws Exception{
+        CBResponse cbResponse;
+        String errorStatement = null;
+        if (cbRequest == null) {
+            errorStatement += "Invalid entry/n";
+        } else {
+            if (cbRequest.getCode() == null) {
+                errorStatement += "Invalid input/n";
+            }
+        }
+
+        if (errorStatement!=null){
+            CBResponseError cbResponseError = new CBResponseError(errorStatement);
+            cbResponse = new CBResponse(cbResponseError);
+            return ResponseEntity.ok()
+                    .body(cbResponse);
+        }
+
+        cbResponse = codeBlockService.create(cbRequest);
         return ResponseEntity.ok()
                 .body(cbResponse);
     }
 
-    /*
-    @PostMapping(path = "/members", consumes = "application/json", produces = "application/json")
-public void addMember(@RequestBody Member member) {
-    //code
-}
-     */
-
-
-    // TODO: Erase following
+    // TODO: Erase everything below this line
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
     public static final Logger LOGGER = Logger.getLogger(CobdeBlockController.class.getName());
