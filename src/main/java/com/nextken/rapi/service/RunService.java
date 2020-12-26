@@ -11,6 +11,9 @@ import java.util.UUID;
 @Service
 public class RunService {
 
+    //TODO: Be able to take request command
+    //TODO: Be able to return status code as well as response
+
     @Autowired
     CodeBlockService codeBlockService;
 
@@ -29,7 +32,6 @@ public class RunService {
     }
 
     private void createExecutableCode(CodeBlock codeBlock){
-        // TODO: Fix the file extension with compiler
         String fileName = codeBlock.getCodeBlockId().toString() + ".java";
         try {
             File myObj = new File(fileName);
@@ -71,7 +73,11 @@ public class RunService {
             }
 
             int exitVal = process.waitFor();
-            if (exitVal == 0) {
+
+            processBuilder.command("bash", "-c", "rm " +fileName + ".java ");
+            processBuilder.start();
+
+            if (exitVal == 0 ) {
                 System.out.println("Success!");
                 System.out.println(output);
                 //System.exit(0);
