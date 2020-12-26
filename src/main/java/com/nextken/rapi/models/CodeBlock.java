@@ -34,6 +34,13 @@ public class CodeBlock {
         this.codeBlockId = UUID.randomUUID();
     }
 
+    public CodeBlock(String code, CBCompiler cbCompiler, Instant timestamp, UUID codeBlockId) {
+        this.code = code;
+        this.compiler = cbCompiler;
+        this.timeStamp = timestamp;
+        this.codeBlockId = codeBlockId;
+    }
+
     @Deprecated
     public CodeBlock() {
         this.timeStamp = Instant.now();
