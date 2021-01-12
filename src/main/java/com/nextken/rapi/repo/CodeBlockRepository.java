@@ -34,7 +34,7 @@ public class CodeBlockRepository {
         dynamoDB = new DynamoDB(client);
     }
 
-    public void create(CodeBlock codeBlock){
+    public void createDynamo(CodeBlock codeBlock){
 
         Table table = dynamoDB.getTable(tableName);
         try {
@@ -54,7 +54,7 @@ public class CodeBlockRepository {
         }
     }
 
-    public CodeBlock read(UUID codeBlockId){
+    public CodeBlock readDynamo(UUID codeBlockId){
         Table table = dynamoDB.getTable(tableName);
         CodeBlock codeBlock = new CodeBlock();
 
@@ -78,7 +78,8 @@ public class CodeBlockRepository {
 
         return codeBlock;
     }
-    public void createOld(CodeBlock codeBlock){
+
+    public void create(CodeBlock codeBlock){
         // do nothing for now;
         String fileName = codeBlock.getCodeBlockId().toString() + ".txt";
         try {
@@ -104,7 +105,7 @@ public class CodeBlockRepository {
         }
     }
 
-    public CodeBlock readOld(UUID codeBlockId){
+    public CodeBlock read(UUID codeBlockId){
         String code = "";
         String compiler;
         try {
