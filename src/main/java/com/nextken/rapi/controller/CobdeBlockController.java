@@ -10,6 +10,7 @@ import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -24,6 +25,11 @@ public class CobdeBlockController {
 
     @Autowired
     CodeBlockService codeBlockService;
+
+    @GetMapping({"/","/hello"})
+    public String helloWorld(@RequestParam(required = false, defaultValue = "World") String name) {
+        return "hello-world";
+    }
 
     @PostMapping(path = "/formation/codeblock", consumes = "application/json", produces = "application/json")
     public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) throws Exception{
