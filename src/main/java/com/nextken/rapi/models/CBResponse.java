@@ -1,7 +1,14 @@
 package com.nextken.rapi.models;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 public class CBResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String url;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private CBResponseError error;
 
     public String getUrl() {
