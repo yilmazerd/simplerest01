@@ -36,10 +36,14 @@ public class CodeBlockService {
         CodeBlock codeBlock = new CodeBlock(code, cbCompiler);
 
         // Repo
-        codeBlockRepository.create(codeBlock);
+        try {
+            codeBlockRepository.create(codeBlock);
+        } catch (Exception e) {
+            return new CBResponse(e.toString());
+        }
 
         // Response
-        return new CBResponse(codeBlock.getCodeBlockId().toString(), new CBResponseError(""));
+        return new CBResponse(codeBlock.getCodeBlockId().toString());
     }
 
     /*
