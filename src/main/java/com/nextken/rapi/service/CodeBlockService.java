@@ -8,9 +8,13 @@ import org.springframework.stereotype.Service;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 public class CodeBlockService {
+
+    private final Logger LOGGER = Logger.getLogger(this.getClass().getName());
 
     @Autowired
     CodeBlockRepository codeBlockRepository;
@@ -38,6 +42,7 @@ public class CodeBlockService {
         // Repo
         try {
             codeBlockRepository.create(codeBlock);
+            LOGGER.log(Level.INFO, "Created codeBlock with Id: " + codeBlock.getCodeBlockId());
         } catch (Exception e) {
             return new CBResponse(e.toString());
         }

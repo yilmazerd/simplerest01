@@ -1,4 +1,40 @@
 package com.nextken.rapi.service;
 
-public class remo {
+/*
+Example class, use https://www.freeformatter.com/java-dotnet-escape.html#ad-output for converting Java to string
+ */
+public class remo{
+    public static void main(String[] args) {
+        Person person = new Person("Thomas21","Edison");
+        double m;
+        InstantFunctionResponse.responseBuilder(502,person.toString());
+    }
+}
+
+class Person {
+    String firstName;
+    String lastName;
+
+    Person (String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        //return "{\\r\\n\\t\\\"firstName\\\": \\\"" + firstName + "\\\",\\r\\n\\t\\\"lastName\\\": \\\"" + lastName + "\\\"\\r\\n}";
+        return "{ \"firstName\" : "+firstName+", \"lastName\" : "+lastName+" }";
+    }
+}
+
+class InstantFunctionResponse {
+    public static void responseBuilder(int httpStatusCode, String responseObject) {
+        System.out.println("httpStatusCode:"+httpStatusCode);
+        System.out.println("responseObject:"+responseObject);
+    }
+
+    public static void responseBuilder(String responseObject) {
+        responseBuilder(502, responseObject);
+    }
+
 }

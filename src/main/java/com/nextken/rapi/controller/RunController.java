@@ -2,10 +2,7 @@ package com.nextken.rapi.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nextken.rapi.models.CBRequest;
-import com.nextken.rapi.models.CBResponse;
-import com.nextken.rapi.models.CBResponseError;
-import com.nextken.rapi.models.RunRequest;
+import com.nextken.rapi.models.*;
 import com.nextken.rapi.service.CodeBlockService;
 import com.nextken.rapi.service.RunService;
 import net.minidev.json.JSONObject;
@@ -23,10 +20,11 @@ public class RunController {
     @PostMapping(path = "/run", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Object> runController(@RequestBody RunRequest runRequest) throws Exception{
 
-        Object codeRunResult = runService.run(runRequest);
+        //Object codeRunResult = runService.run(runRequest);
+        CodeRunResponse codeRunResponse  = runService.run(runRequest);
 
-        return ResponseEntity.ok()
-                .body(codeRunResult);
+        return ResponseEntity.status(codeRunResponse.getResponseCode())
+                .body(codeRunResponse.getResponse());
     }
 
     @Override

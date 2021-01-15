@@ -2,6 +2,8 @@ package com.nextken.rapi.service;
 
 import com.nextken.rapi.models.*;
 import com.nextken.rapi.repo.CodeBlockRepository;
+import net.minidev.json.JSONObject;
+import net.minidev.json.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ public class RunService {
 
     public RunService() { };
 
-    public Object run(RunRequest runRequest){
+    public CodeRunResponse run(RunRequest runRequest){
 
         // 1. Read raw code from repository
         CodeBlock codeBlock = codeBlockService.read(runRequest.getCodeBlockId());
@@ -28,7 +30,33 @@ public class RunService {
         // 3. Depening on the compiler, execute the new code
         String logs = executeCode(codeBlock.getCodeBlockId());
         // 4. Collect the results and return
-        return logs;
+        JSONParser parser = new JSONParser();
+        JSONObject json = new JSONObject();
+        // TODO: throw an error if the client is not logging status code
+
+        int statusCodeInt;
+        CodeRunResponse codeRunResponse = new CodeRunResponse();
+
+        String statusCode = logs.substring(15,18);
+        try {
+            statusCodeInt = Integer.parseInt(statusCode);
+        } catch (Exception e) {
+            statusCodeInt = 200;
+        }
+
+        codeRunResponse.setResponseCode(statusCodeInt);
+
+        // TODO: Throw error if logs are not long enough or if the don't have the log statement for response
+        logs = logs.substring(34);
+
+        try {
+            json = (JSONObject) parser.parse(logs);
+            codeRunResponse.setResponse(json);
+        } catch (Exception e) {
+            codeRunResponse.setResponse(logs);
+        }
+
+        return codeRunResponse;
     }
 
     private void createExecutableCode(CodeBlock codeBlock){
