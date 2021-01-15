@@ -23,6 +23,8 @@ import java.util.logging.Logger;
 @RestController
 public class CobdeBlockController {
 
+    private final Logger LOGGER = Logger.getLogger(this.getClass().getName());
+
     @Autowired
     CodeBlockService codeBlockService;
 
@@ -31,6 +33,7 @@ public class CobdeBlockController {
         return "hello-world";
     }
 
+    @CrossOrigin(origins = "null")
     @PostMapping(path = "/formation/codeblock", consumes = "application/json", produces = "application/json")
     public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) throws Exception{
         CBResponse cbResponse;
@@ -51,6 +54,7 @@ public class CobdeBlockController {
         }
 
         cbResponse = codeBlockService.create(cbRequest);
+
         return ResponseEntity.ok()
                 .body(cbResponse);
     }
@@ -58,7 +62,6 @@ public class CobdeBlockController {
     // TODO: Erase everything below this line
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
-    public static final Logger LOGGER = Logger.getLogger(CobdeBlockController.class.getName());
     ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
     JSONObject jsonObject = new JSONObject();
