@@ -2,6 +2,7 @@ package com.nextken.rapi.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.nextken.rapi.models.CBCompiler;
 import com.nextken.rapi.models.CBRequest;
 import com.nextken.rapi.models.CBResponse;
 import com.nextken.rapi.models.CBResponseError;
@@ -52,6 +53,40 @@ public class CobdeBlockController {
             return ResponseEntity.ok()
                     .body(cbResponse);
         }
+
+        cbResponse = codeBlockService.create(cbRequest);
+
+        return ResponseEntity.ok()
+                .body(cbResponse);
+    }
+
+    @CrossOrigin(origins = "null")
+    @PostMapping(path = "/formation/codeblock2", consumes = "text/plain", produces = "application/json")
+    public ResponseEntity<CBResponse> postFormationController2(
+            @RequestBody String cbRequestIn,
+            @RequestHeader Map<String, String> headers) throws Exception {
+        CBResponse cbResponse;
+        String errorStatement = null;
+        if (cbRequestIn == null) {
+            errorStatement += "Invalid entry/n";
+        }
+
+        if (errorStatement != null) {
+            CBResponseError cbResponseError = new CBResponseError(errorStatement);
+            cbResponse = new CBResponse(cbResponseError);
+            return ResponseEntity.ok()
+                    .body(cbResponse);
+        }
+
+
+        CBCompiler compiler;
+        try {
+            compiler = CBCompiler.valueOf(headers.get("compiler"));
+        } catch (Exception e) {
+            throw new IllegalAccessException("Incorrect compiler");
+        }
+
+        CBRequest cbRequest = new CBRequest(cbRequestIn, "primaryKey","secondaryKey",compiler);
 
         cbResponse = codeBlockService.create(cbRequest);
 
