@@ -28,7 +28,7 @@ public class RunService {
         // 2. Out of raw code, create the executable code
         createExecutableCode(codeBlock);
         // 3. Depening on the compiler, execute the new code
-        String logs = executeCode(codeBlock.getCodeBlockId());
+        String logs = executeCode(codeBlock.getCodeBlockId(), runRequest.getCodeString());
         // 4. Collect the results and return
         JSONParser parser = new JSONParser();
         JSONObject json = new JSONObject();
@@ -84,9 +84,9 @@ public class RunService {
         }
     }
 
-    private String executeCode(UUID fileName) {
+    private String executeCode(UUID fileName, String runRequestBody) {
         ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("bash", "-c", "java " +fileName + ".java ");
+        processBuilder.command("bash", "-c", "java " +fileName + ".java " + runRequestBody);
         StringBuilder output = new StringBuilder();
         try {
 

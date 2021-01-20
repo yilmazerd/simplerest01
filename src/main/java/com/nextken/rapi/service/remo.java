@@ -6,8 +6,12 @@ Example class, use https://www.freeformatter.com/java-dotnet-escape.html#ad-outp
 public class remo{
     public static void main(String[] args) {
         Person person = new Person("Thomas21","Edison");
-        double m;
-        InstantFunctionResponse.responseBuilder(502,person.toString());
+        System.out.println(args);
+        String allArgs = "";
+        for (int i = 0; i<args.length; i++) {
+            allArgs+=args[i];
+        }
+        InstantFunctionResponse.responseBuilder(502,person.toString() + allArgs + args.length);
     }
 }
 
