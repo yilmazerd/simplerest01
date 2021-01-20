@@ -4,5 +4,7 @@ API
 - Use AWS Lambda for executing java code
 -- Add mock endpoint and explanation
 
+SMP-003, Lambda code can run parameter
+
 UI
 -- Add tutorial
