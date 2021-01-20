@@ -81,7 +81,7 @@ public class CobdeBlockController {
 
         CBCompiler compiler;
         try {
-            compiler = CBCompiler.valueOf(headers.get("compiler"));
+                compiler = CBCompiler.valueOf(headers.get("compiler"));
         } catch (Exception e) {
             throw new IllegalAccessException("Incorrect compiler");
         }

@@ -5,6 +5,7 @@ public class RunRequest {
 
     private Object runRequestBlock;
     private UUID codeBlockId;
+    private String codeString;
 
     public UUID getCodeBlockId() {
         return codeBlockId;
@@ -14,9 +15,16 @@ public class RunRequest {
         return runRequestBlock;
     }
 
-    RunRequest(UUID codeBlockId, Object runRequestBlock) {
+    public String getCodeString() { return codeString;}
+
+    public RunRequest(UUID codeBlockId, Object runRequestBlock) {
         this.codeBlockId = codeBlockId;
         this.runRequestBlock = runRequestBlock;
+    }
+
+    public RunRequest(UUID codeBlockId, String codeString) {
+        this.codeBlockId = codeBlockId;
+        this.codeString = codeString;
     }
 
 
