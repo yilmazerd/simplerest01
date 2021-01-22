@@ -39,11 +39,11 @@ public class RunService {
 
         // TODO: Convert to a method
         // Find status code
-        int statusCodeInt;
-        int statusCodePointer = logs.indexOf("statusCode");
-        String statusCode = logs.substring(statusCodePointer+15,statusCodePointer+18);
+        int statusCodeInt = 200;
 
         try {
+            int statusCodePointer = logs.indexOf("statusCode");
+            String statusCode = logs.substring(statusCodePointer+15,statusCodePointer+18);
             statusCodeInt = Integer.parseInt(statusCode);
         } catch (Exception e) {
             statusCodeInt = 200;
@@ -52,9 +52,9 @@ public class RunService {
         codeRunResponse.setResponseCode(statusCodeInt);
 
         // TODO: Throw error if logs are not long enough or if the don't have the log statement for response
-        logs = logs.substring(logs.indexOf("responseObject")+15);
 
         try {
+            logs = logs.substring(logs.indexOf("responseObject")+15);
             json = (JSONObject) parser.parse(logs);
             codeRunResponse.setResponse(json);
         } catch (Exception e) {

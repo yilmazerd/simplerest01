@@ -6,6 +6,9 @@ API
 
 SMP-003, Lambda code can run parameter
 SMP-004, Clear controllers
+SMP-005, Limit users request to 300 characters and ignore rest because the command line is argument passing is limited
+SMP-006, Make all the verbs work (GET, PATCH, DELETE, PUT)
+
 
 UI
 -- Add tutorial
