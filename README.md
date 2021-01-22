@@ -5,6 +5,7 @@ API
 -- Add mock endpoint and explanation
 
 SMP-003, Lambda code can run parameter
+SMP-004, Clear controllers
 
 UI
 -- Add tutorial

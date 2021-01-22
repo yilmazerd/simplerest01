@@ -19,17 +19,7 @@ public class RunController {
     @Autowired
     RunService runService;
 
-    @PostMapping(path = "/run", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> runController(@RequestBody RunRequest runRequest) throws Exception{
-
-        //Object codeRunResult = runService.run(runRequest);
-        CodeRunResponse codeRunResponse  = runService.run(runRequest);
-
-        return ResponseEntity.status(codeRunResponse.getResponseCode())
-                .body(codeRunResponse.getResponse());
-    }
-
-    @PostMapping(path = "/run2/{id}", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Object> runController2(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
 
         RunRequest runRequest = new RunRequest(codeId,requestedCode.toString());
