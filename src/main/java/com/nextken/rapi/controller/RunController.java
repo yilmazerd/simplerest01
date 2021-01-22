@@ -19,15 +19,47 @@ public class RunController {
     @Autowired
     RunService runService;
 
-    @PostMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> runController2(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+    // All controllers return the same
 
-        RunRequest runRequest = new RunRequest(codeId,requestedCode.toString());
+    @PostMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Object> postController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+
+        return controllerProcess(codeId, requestedCode);
+    }
+
+    @PatchMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Object> patchController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+
+        return controllerProcess(codeId, requestedCode);
+    }
+
+    @GetMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Object> getController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+
+        return controllerProcess(codeId, requestedCode);
+    }
+
+    @DeleteMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Object> deleteController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+
+        return controllerProcess(codeId, requestedCode);
+    }
+
+    @PutMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Object> putController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+
+        return controllerProcess(codeId, requestedCode);
+    }
+
+    private ResponseEntity<Object> controllerProcess(UUID codeId, JsonNode requestedCode){
+
+        RunRequest runRequest = new RunRequest(codeId, requestedCode.toString());
 
         CodeRunResponse codeRunResponse  = runService.run(runRequest);
 
         return ResponseEntity.status(codeRunResponse.getResponseCode())
                 .body(codeRunResponse.getResponse());
+
     }
 
     @Override
