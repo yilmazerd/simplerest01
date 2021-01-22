@@ -15,6 +15,7 @@ public class RunService {
 
     //TODO: Be able to take request command
     //TODO: Be able to return status code as well as response
+    //TODO: Limit runtime to 1 second
 
     @Autowired
     CodeBlockService codeBlockService;
@@ -34,10 +35,14 @@ public class RunService {
         JSONObject json = new JSONObject();
         // TODO: throw an error if the client is not logging status code
 
-        int statusCodeInt;
         CodeRunResponse codeRunResponse = new CodeRunResponse();
 
-        String statusCode = logs.substring(15,18);
+        // TODO: Convert to a method
+        // Find status code
+        int statusCodeInt;
+        int statusCodePointer = logs.indexOf("statusCode");
+        String statusCode = logs.substring(statusCodePointer+15,statusCodePointer+18);
+
         try {
             statusCodeInt = Integer.parseInt(statusCode);
         } catch (Exception e) {
@@ -47,7 +52,7 @@ public class RunService {
         codeRunResponse.setResponseCode(statusCodeInt);
 
         // TODO: Throw error if logs are not long enough or if the don't have the log statement for response
-        logs = logs.substring(34);
+        logs = logs.substring(logs.indexOf("responseObject")+15);
 
         try {
             json = (JSONObject) parser.parse(logs);
