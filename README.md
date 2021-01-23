@@ -12,5 +12,4 @@ SMP-006, Make all the verbs work (GET, PATCH, DELETE, PUT)
 
 UI
 -- Add tutorial
-
 UIX-002, Integrate with woof for email capture
