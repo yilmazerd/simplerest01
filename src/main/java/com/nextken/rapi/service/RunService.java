@@ -90,6 +90,13 @@ public class RunService {
     }
 
     private String executeCode(UUID fileName, String runRequestBody) {
+
+        // TODO REMOVE THIS LIMIT. Needed for command line argument passing to work
+        // TODO At this time, client must limit the request to 600 characters
+        if (runRequestBody.length() > 600) {
+            runRequestBody = "";
+        }
+
         ProcessBuilder processBuilder = new ProcessBuilder();
         processBuilder.command("bash", "-c", "java " +fileName + ".java " + runRequestBody);
         StringBuilder output = new StringBuilder();
