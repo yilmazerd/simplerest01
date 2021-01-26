@@ -42,7 +42,7 @@ public class CodeBlockService {
         // Repo
         try {
             codeBlockRepository.create(codeBlock);
-            LOGGER.log(Level.INFO, "Created codeBlock with Id: " + codeBlock.getCodeBlockId());
+            LOGGER.log(Level.INFO, "Created codeBlock : " + codeBlock.getCode() + ", with Id: " + codeBlock.getCodeBlockId());
         } catch (Exception e) {
             return new CBResponse(e.toString());
         }
