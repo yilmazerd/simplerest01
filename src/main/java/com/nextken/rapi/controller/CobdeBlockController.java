@@ -34,7 +34,7 @@ public class CobdeBlockController {
         return "hello-world";
     }
 
-    @CrossOrigin(origins = "null")
+    @CrossOrigin(origins = {"null", "https://instantfunction.com"})
     @PostMapping(path = "/formation/codeblock", consumes = "application/json", produces = "application/json")
     public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) throws Exception{
         CBResponse cbResponse;
@@ -60,7 +60,7 @@ public class CobdeBlockController {
                 .body(cbResponse);
     }
 
-    @CrossOrigin(origins = "null")
+    @CrossOrigin(origins = {"null", "https://instantfunction.com"})
     @PostMapping(path = "/formation/codeblock2", consumes = "text/plain", produces = "application/json")
     public ResponseEntity<CBResponse> postFormationController2(
             @RequestBody String cbRequestIn,
