@@ -24,5 +24,7 @@ UIX-002, Integrate with woof for email capture
 
 UIX-003, Implement About and Features
 
+UIX-004, Add email capture
+
 
 
