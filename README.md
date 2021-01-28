@@ -26,5 +26,10 @@ UIX-003, Implement About and Features
 
 UIX-004, Add email capture
 
+UIX-005, Similar to woof there can be a screen that says how you want to start. 
+Start with existing applications or start from scratch. I think that existing applications
+can be better here becasue the amount of examples is very high..
+
+
 
 
