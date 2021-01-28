@@ -12,6 +12,8 @@ SMP-005, Limit users request to 300 characters and ignore rest because the comma
 
 SMP-006, Make all the verbs work (GET, PATCH, DELETE, PUT) (DONE)
 
+JXA4, Amazon reported bug fixes and GET works on the browser 
+
 
 UI
 -- Add tutorial

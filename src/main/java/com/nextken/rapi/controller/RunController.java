@@ -33,10 +33,14 @@ public class RunController {
         return controllerProcess(codeId, requestedCode);
     }
 
-    @GetMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> getController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+    @GetMapping(path = "/run/{id}", produces = "application/json")
+    public ResponseEntity<Object> getController(@PathVariable("id") UUID codeId) throws Exception{
 
-        return controllerProcess(codeId, requestedCode);
+        String json = "{}";
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonNode = objectMapper.readTree(json);
+
+        return controllerProcess(codeId, jsonNode);
     }
 
     @DeleteMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
