@@ -93,15 +93,24 @@ public class CodeBlockRepository {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+        FileWriter myWriter = null;
 
         try {
-            FileWriter myWriter = new FileWriter(fileName);
+            myWriter = new FileWriter(fileName);
             myWriter.write(codeBlock.getCode());
-            myWriter.close();
+
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
+        } finally {
+            if (myWriter != null ) {
+                try {
+                    myWriter.close();
+                } catch (IOException e) {
+                    System.out.println("An error occurred closing file " + e.toString());
+                }
+            }
         }
     }
 

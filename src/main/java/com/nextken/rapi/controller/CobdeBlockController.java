@@ -83,7 +83,7 @@ public class CobdeBlockController {
         try {
                 compiler = CBCompiler.valueOf(headers.get("compiler"));
         } catch (Exception e) {
-            throw new IllegalAccessException("Incorrect compiler");
+            throw new IllegalAccessException("Incorrect compiler " + e.toString());
         }
 
         CBRequest cbRequest = new CBRequest(cbRequestIn, "primaryKey","secondaryKey",compiler);
