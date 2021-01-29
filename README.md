@@ -14,6 +14,8 @@ SMP-006, Make all the verbs work (GET, PATCH, DELETE, PUT) (DONE)
 
 JXA4, Amazon reported bug fixes and GET works on the browser 
 
+SMP-007, Investigate how to install python into the environment
+
 
 UI
 -- Add tutorial
