@@ -16,6 +16,8 @@ JXA4, Amazon reported bug fixes and GET works on the browser
 
 SMP-007, Investigate how to install python into the environment
 
+SMP-007, Run Python
+
 
 UI
 -- Add tutorial

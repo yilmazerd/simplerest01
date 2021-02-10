@@ -29,7 +29,7 @@ public class RunService {
         // 2. Out of raw code, create the executable code
         createExecutableCode(codeBlock);
         // 3. Depening on the compiler, execute the new code
-        String logs = executeCode(codeBlock.getCodeBlockId(), runRequest.getCodeString());
+        String logs = executeCode(codeBlock, runRequest.getCodeString());
         // 4. Collect the results and return
         JSONParser parser = new JSONParser();
         JSONObject json = new JSONObject();
@@ -54,8 +54,8 @@ public class RunService {
         // TODO: Throw error if logs are not long enough or if the don't have the log statement for response
 
         try {
-            logs = logs.substring(logs.indexOf("responseObject")+15);
-            json = (JSONObject) parser.parse(logs);
+            String newLogs = logs.substring(logs.indexOf("responseObject")+15);
+            json = (JSONObject) parser.parse(newLogs);
             codeRunResponse.setResponse(json);
         } catch (Exception e) {
             codeRunResponse.setResponse(logs);
@@ -65,7 +65,9 @@ public class RunService {
     }
 
     private void createExecutableCode(CodeBlock codeBlock){
-        String fileName = codeBlock.getCodeBlockId().toString() + ".java";
+        String extension = getExtension(codeBlock);
+
+        String fileName = codeBlock.getCodeBlockId().toString() + "." +  extension;
         try {
             File myObj = new File(fileName);
             if (myObj.createNewFile()) {
@@ -97,7 +99,7 @@ public class RunService {
         }
     }
 
-    private String executeCode(UUID fileName, String runRequestBody) {
+    private String executeCode(CodeBlock codeBlock, String runRequestBody) {
 
         // TODO REMOVE THIS LIMIT. Needed for command line argument passing to work
         // TODO At this time, client must limit the request to 600 characters
@@ -105,8 +107,17 @@ public class RunService {
             runRequestBody = "";
         }
 
+        String fileName = codeBlock.getCodeBlockId().toString() + "." + getExtension(codeBlock);
+        String executor = getExecutor(codeBlock);
+
         ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("bash", "-c", "java " +fileName + ".java " + runRequestBody);
+        if (executor == "java") {
+            processBuilder.command("bash", "-c", executor + " " + fileName + runRequestBody);
+        }
+         else {
+            processBuilder.command("bash", "-c", executor + " " + fileName );
+        }
+
         StringBuilder output = new StringBuilder();
         try {
 
@@ -122,7 +133,7 @@ public class RunService {
 
             int exitVal = process.waitFor();
 
-            processBuilder.command("bash", "-c", "rm " +fileName + ".java ");
+            processBuilder.command("bash", "-c", "rm " +fileName + " ");
             processBuilder.start();
 
             if (exitVal == 0 ) {
@@ -139,5 +150,41 @@ public class RunService {
             e.printStackTrace();
         }
         return output.toString();
+    }
+
+    private String getExtension(CodeBlock codeBlock) {
+        String extension = null;
+
+        switch (codeBlock.getCompiler()) {
+            case JAVA9:
+            case JAVA11:
+                extension = "java";
+                break;
+
+            case PYTHON37:
+                extension = "py";
+                break;
+
+        }
+
+        return extension;
+    }
+
+    private String getExecutor(CodeBlock codeBlock) {
+        String executor = null;
+
+        switch (codeBlock.getCompiler()) {
+            case JAVA9:
+            case JAVA11:
+                executor = "java";
+                break;
+
+            case PYTHON37:
+                executor = "python";
+                break;
+
+        }
+
+        return executor;
     }
 }
