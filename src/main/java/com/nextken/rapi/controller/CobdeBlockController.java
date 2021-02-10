@@ -34,31 +34,31 @@ public class CobdeBlockController {
         return "hello-world";
     }
 
-    @CrossOrigin(origins = {"null", "https://instantfunction.com"})
-    @PostMapping(path = "/formation/codeblock", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) throws Exception{
-        CBResponse cbResponse;
-        String errorStatement = null;
-        if (cbRequest == null) {
-            errorStatement += "Invalid entry/n";
-        } else {
-            if (cbRequest.getCode() == null) {
-                errorStatement += "Invalid input/n";
-            }
-        }
-
-        if (errorStatement!=null){
-            CBResponseError cbResponseError = new CBResponseError(errorStatement);
-            cbResponse = new CBResponse(cbResponseError);
-            return ResponseEntity.ok()
-                    .body(cbResponse);
-        }
-
-        cbResponse = codeBlockService.create(cbRequest);
-
-        return ResponseEntity.ok()
-                .body(cbResponse);
-    }
+//    @CrossOrigin(origins = {"null", "https://instantfunction.com"})
+//    @PostMapping(path = "/formation/codeblock", consumes = "application/json", produces = "application/json")
+//    public ResponseEntity<CBResponse> postFormationController(@RequestBody CBRequest cbRequest) throws Exception{
+//        CBResponse cbResponse;
+//        String errorStatement = null;
+//        if (cbRequest == null) {
+//            errorStatement += "Invalid entry/n";
+//        } else {
+//            if (cbRequest.getCode() == null) {
+//                errorStatement += "Invalid input/n";
+//            }
+//        }
+//
+//        if (errorStatement!=null){
+//            CBResponseError cbResponseError = new CBResponseError(errorStatement);
+//            cbResponse = new CBResponse(cbResponseError);
+//            return ResponseEntity.ok()
+//                    .body(cbResponse);
+//        }
+//
+//        cbResponse = codeBlockService.create(cbRequest);
+//
+//        return ResponseEntity.ok()
+//                .body(cbResponse);
+//    }
 
     @CrossOrigin(origins = {"null", "https://instantfunction.com"})
     @PostMapping(path = "/formation/codeblock2", consumes = "text/plain", produces = "application/json")
