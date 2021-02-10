@@ -112,7 +112,7 @@ public class RunService {
 
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (executor == "java") {
-            processBuilder.command("bash", "-c", executor + " " + fileName + runRequestBody);
+            processBuilder.command("bash", "-c", executor + " " + fileName + " " + runRequestBody);
         }
          else {
             processBuilder.command("bash", "-c", executor + " " + fileName );
