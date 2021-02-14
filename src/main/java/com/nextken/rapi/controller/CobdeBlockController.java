@@ -84,7 +84,9 @@ public class CobdeBlockController {
         try {
                 compiler = CBCompiler.valueOf(headers.get("compiler"));
         } catch (Exception e) {
-            throw new IllegalAccessException("Incorrect compiler " + e.toString());
+            System.out.println("Incorrect compiler " + e.toString());
+            // DEFAULT TO JAVA
+            compiler = CBCompiler.JAVA11;
         }
 
         CBRequest cbRequest = new CBRequest(cbRequestIn, "primaryKey","secondaryKey",compiler);
