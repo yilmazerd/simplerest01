@@ -61,7 +61,7 @@ public class CobdeBlockController {
 //    }
 
     @CrossOrigin(origins = {"null", "https://instantfunction.com"})
-    @PostMapping(path = "/formation/codeblock2", consumes = "text/plain", produces = "application/json")
+    @PostMapping(path = "/formation/codeblock2", produces = "application/json")
     public ResponseEntity<CBResponse> postFormationController2(
             @RequestBody String cbRequestIn,
             @RequestHeader Map<String, String> headers) throws Exception {
