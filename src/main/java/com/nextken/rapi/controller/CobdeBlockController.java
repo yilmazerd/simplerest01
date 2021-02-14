@@ -65,6 +65,7 @@ public class CobdeBlockController {
     public ResponseEntity<CBResponse> postFormationController2(
             @RequestBody String cbRequestIn,
             @RequestHeader Map<String, String> headers) throws Exception {
+        System.out.println("Received codeblock2 request");
         CBResponse cbResponse;
         String errorStatement = null;
         if (cbRequestIn == null) {
@@ -90,6 +91,7 @@ public class CobdeBlockController {
 
         cbResponse = codeBlockService.create(cbRequest);
 
+        System.out.println("Returning response");
         return ResponseEntity.ok()
                 .body(cbResponse);
     }
