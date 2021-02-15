@@ -66,6 +66,9 @@ public class CobdeBlockController {
             @RequestBody String cbRequestIn,
             @RequestHeader Map<String, String> headers) throws Exception {
         System.out.println("Received codeblock2 request");
+        headers.keySet().forEach(k-> {
+            System.out.println("key: " + k + " " + headers.get(k));
+        });
         CBResponse cbResponse;
         String errorStatement = null;
         if (cbRequestIn == null) {
