@@ -18,6 +18,8 @@ SMP-007, Investigate how to install python into the environment
 
 SMP-007, Run Python
 
+SMP-008, Add mock endpoint
+
 
 UI
 -- Add tutorial
