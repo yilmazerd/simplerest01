@@ -2,6 +2,7 @@ package com.nextken.rapi.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.nextken.rapi.models.CodeRunResponse;
 import com.nextken.rapi.models.RunRequest;
 import com.nextken.rapi.service.RunService;
@@ -22,6 +23,7 @@ public class MockController {
     private static final int PAGE_SIZE = 3000;
     private static final String DEFAULT_RESPONSE = "200";
     private static final String DEFAULT_DELAY = "0";
+    private static ObjectMapper mapper = new ObjectMapper();
 
     /*
     This is the response code of the response, such as 200, 502
@@ -35,25 +37,36 @@ public class MockController {
      */
     private static final String DELAY_HEADER = "responsedelay";
 
+    private static final String DEFAULT_MEDIA_TYPE = "application/json";
+
     private static final String URL_HEADER = "urlheader";
-    private static final String CONTENT_TYPE = "contenttype";
+    private static final String MEDIA_TYPE = "mediatype";
     private static final String RESPONSE_CONTENT = "responsecontent";
+    private static final String DEFAULT_RESPONSE_CONTENT = "{}";
     private static int MAX_RESPONSE_DELAY = 35000;
 
     @PostMapping(path = "/mock")
     public ResponseEntity<Object> postController(@RequestBody String request,
                                                  @RequestHeader Map<String, String> headers,
                                                  @RequestParam(value = RESPONSE_CODE_HEADER, required = false) String responseCode,
-                                                 @RequestParam(value = DELAY_HEADER, required = false) String responseDelay
+                                                 @RequestParam(value = DELAY_HEADER, required = false) String responseDelay,
+                                                 @RequestParam(value = MEDIA_TYPE, required = false) String mediaType,
+                                                 @RequestParam(value = RESPONSE_CONTENT, required = false) String responseCotent
+
                                                  ) throws Exception{
 
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put(RESPONSE_CODE_HEADER, responseCode);
-        queryParams.put(RESPONSE_CODE_HEADER, responseDelay);
+        queryParams.put(DELAY_HEADER, responseDelay);
+        queryParams.put(RESPONSE_CONTENT, responseCotent);
+        queryParams.put(MEDIA_TYPE, mediaType);
 
         return getResponse(request, headers, queryParams);
     }
 
+    /*
+    Use https://www.browserling.com/tools/remove-all-whitespace for removing whitespace
+     */
     private ResponseEntity<Object> getResponse(String request,
                                                Map<String, String> headers,
                                                Map<String, String> queryParams) {
@@ -63,9 +76,26 @@ public class MockController {
         //String contentType = ObjectUtils.firstNonNull(request.getHeader(CONTENT_TYPE),request.getParameter(CONTENT_TYPE));
         //String responseFromUrl = null;
 
+        //Get response content
+        //DEFAULT_RESPONSE_CONTENT
+        String responseContent = ObjectUtils.firstNonNull(headers.get(RESPONSE_CONTENT),queryParams.get(RESPONSE_CONTENT),DEFAULT_RESPONSE_CONTENT);
+        JsonNode jsonNode = mapper.createObjectNode();
+        try {
+            jsonNode = mapper.readValue(responseContent, JsonNode.class);
+        } catch (Exception e) {
+            jsonNode = null;
+        }
+
         // Get response code
         String responseCode = ObjectUtils.firstNonNull(headers.get(RESPONSE_CODE_HEADER),queryParams.get(RESPONSE_CODE_HEADER),DEFAULT_RESPONSE);
         Integer responseCodeInt = Integer.valueOf(responseCode);
+
+        // Get return type
+        MediaType mediaType = MediaType.APPLICATION_JSON;
+        String mediaTypeString = responseCode = ObjectUtils.firstNonNull(headers.get(MEDIA_TYPE),queryParams.get(MEDIA_TYPE),DEFAULT_MEDIA_TYPE);
+        try {
+            mediaType = MediaType.valueOf(mediaTypeString);
+        } catch (Exception e) {}
 
         // Get delay
         String responseDelay = ObjectUtils.firstNonNull(headers.get(DELAY_HEADER),queryParams.get(DELAY_HEADER),DEFAULT_DELAY);
@@ -79,7 +109,7 @@ public class MockController {
         return ResponseEntity
                 .status(responseCodeInt)
                 .contentType(MediaType.APPLICATION_JSON)
-                .body(request);
+                .body(ObjectUtils.firstNonNull(jsonNode,responseContent,DEFAULT_RESPONSE_CONTENT));
     }
 
     @Override
