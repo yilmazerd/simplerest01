@@ -64,6 +64,85 @@ public class MockController {
         return getResponse(request, headers, queryParams);
     }
 
+    @PutMapping(path = "/mock")
+    public ResponseEntity<Object> putController(@RequestBody String request,
+                                                 @RequestHeader Map<String, String> headers,
+                                                 @RequestParam(value = RESPONSE_CODE_HEADER, required = false) String responseCode,
+                                                 @RequestParam(value = DELAY_HEADER, required = false) String responseDelay,
+                                                 @RequestParam(value = MEDIA_TYPE, required = false) String mediaType,
+                                                 @RequestParam(value = RESPONSE_CONTENT, required = false) String responseCotent
+
+    ) throws Exception{
+
+        Map<String, String> queryParams = new HashMap<>();
+        queryParams.put(RESPONSE_CODE_HEADER, responseCode);
+        queryParams.put(DELAY_HEADER, responseDelay);
+        queryParams.put(RESPONSE_CONTENT, responseCotent);
+        queryParams.put(MEDIA_TYPE, mediaType);
+
+        return getResponse(request, headers, queryParams);
+    }
+
+
+    @PatchMapping(path = "/mock")
+    public ResponseEntity<Object> patchController(@RequestBody String request,
+                                                @RequestHeader Map<String, String> headers,
+                                                @RequestParam(value = RESPONSE_CODE_HEADER, required = false) String responseCode,
+                                                @RequestParam(value = DELAY_HEADER, required = false) String responseDelay,
+                                                @RequestParam(value = MEDIA_TYPE, required = false) String mediaType,
+                                                @RequestParam(value = RESPONSE_CONTENT, required = false) String responseCotent
+
+    ) throws Exception{
+
+        Map<String, String> queryParams = new HashMap<>();
+        queryParams.put(RESPONSE_CODE_HEADER, responseCode);
+        queryParams.put(DELAY_HEADER, responseDelay);
+        queryParams.put(RESPONSE_CONTENT, responseCotent);
+        queryParams.put(MEDIA_TYPE, mediaType);
+
+        return getResponse(request, headers, queryParams);
+    }
+
+
+    @GetMapping(path = "/mock")
+    public ResponseEntity<Object> getController(@RequestBody String request,
+                                                  @RequestHeader Map<String, String> headers,
+                                                  @RequestParam(value = RESPONSE_CODE_HEADER, required = false) String responseCode,
+                                                  @RequestParam(value = DELAY_HEADER, required = false) String responseDelay,
+                                                  @RequestParam(value = MEDIA_TYPE, required = false) String mediaType,
+                                                  @RequestParam(value = RESPONSE_CONTENT, required = false) String responseCotent
+
+    ) throws Exception{
+
+        Map<String, String> queryParams = new HashMap<>();
+        queryParams.put(RESPONSE_CODE_HEADER, responseCode);
+        queryParams.put(DELAY_HEADER, responseDelay);
+        queryParams.put(RESPONSE_CONTENT, responseCotent);
+        queryParams.put(MEDIA_TYPE, mediaType);
+
+        return getResponse(request, headers, queryParams);
+    }
+
+
+    @DeleteMapping(path = "/mock")
+    public ResponseEntity<Object> deleteController(@RequestBody String request,
+                                                @RequestHeader Map<String, String> headers,
+                                                @RequestParam(value = RESPONSE_CODE_HEADER, required = false) String responseCode,
+                                                @RequestParam(value = DELAY_HEADER, required = false) String responseDelay,
+                                                @RequestParam(value = MEDIA_TYPE, required = false) String mediaType,
+                                                @RequestParam(value = RESPONSE_CONTENT, required = false) String responseCotent
+
+    ) throws Exception{
+
+        Map<String, String> queryParams = new HashMap<>();
+        queryParams.put(RESPONSE_CODE_HEADER, responseCode);
+        queryParams.put(DELAY_HEADER, responseDelay);
+        queryParams.put(RESPONSE_CONTENT, responseCotent);
+        queryParams.put(MEDIA_TYPE, mediaType);
+
+        return getResponse(request, headers, queryParams);
+    }
+
     /*
     Use https://www.browserling.com/tools/remove-all-whitespace for removing whitespace
      */
