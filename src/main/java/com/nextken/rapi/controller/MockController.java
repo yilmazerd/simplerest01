@@ -45,15 +45,15 @@ public class MockController {
     private static final String DEFAULT_RESPONSE_CONTENT = "{}";
     private static int MAX_RESPONSE_DELAY = 35000;
 
-    @PostMapping(path = "/mock")
-    public ResponseEntity<Object> postController(@RequestBody String request,
+    @RequestMapping(path = "/mock")
+    public ResponseEntity<Object> reqController(@RequestBody String request,
                                                  @RequestHeader Map<String, String> headers,
                                                  @RequestParam(value = RESPONSE_CODE_HEADER, required = false) String responseCode,
                                                  @RequestParam(value = DELAY_HEADER, required = false) String responseDelay,
                                                  @RequestParam(value = MEDIA_TYPE, required = false) String mediaType,
                                                  @RequestParam(value = RESPONSE_CONTENT, required = false) String responseCotent
 
-                                                 ) throws Exception{
+    ) throws Exception{
 
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put(RESPONSE_CODE_HEADER, responseCode);
