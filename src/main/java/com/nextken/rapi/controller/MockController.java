@@ -101,6 +101,9 @@ public class MockController {
         String responseDelay = ObjectUtils.firstNonNull(headers.get(DELAY_HEADER),queryParams.get(DELAY_HEADER),DEFAULT_DELAY);
         Integer responseDelayInt = 0;
         try { responseDelayInt = Integer.valueOf(responseDelay); } catch (Exception e) { }
+        if (responseDelayInt < 0 || responseDelayInt>MAX_RESPONSE_DELAY) {
+            throw new IllegalArgumentException("Response delay can not be negative or more than max response delay of " + MAX_RESPONSE_DELAY );
+        }
         if (responseDelayInt>0) {
             try {
                 Thread.sleep(responseDelayInt);
