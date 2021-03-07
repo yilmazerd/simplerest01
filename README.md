@@ -24,7 +24,7 @@ SMP-009, Fix Mock Endpoint in prod (fix some loging as well)
 
 SMP-010, Client can enter any string and in the fucntion there is a String variable that the client can change
 
-
+SMP-011, Add examples for java and python. Add POSTMAN and CURL for those examples
 
 
 
