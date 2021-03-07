@@ -9,6 +9,7 @@ import net.minidev.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -21,14 +22,14 @@ public class RunController {
 
     // All controllers return the same
 
-    @PostMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> postController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+    @PostMapping(path = "/run/{id}", produces = "application/json")
+    public ResponseEntity<Object> postController(@Nullable @RequestBody String requestedCode, @PathVariable("id") UUID codeId) throws Exception{
 
         return controllerProcess(codeId, requestedCode);
     }
 
-    @PatchMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> patchController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+    @PatchMapping(path = "/run/{id}", produces = "application/json")
+    public ResponseEntity<Object> patchController(@Nullable @RequestBody String requestedCode, @PathVariable("id") UUID codeId) throws Exception{
 
         return controllerProcess(codeId, requestedCode);
     }
@@ -36,28 +37,24 @@ public class RunController {
     @GetMapping(path = "/run/{id}", produces = "application/json")
     public ResponseEntity<Object> getController(@PathVariable("id") UUID codeId) throws Exception{
 
-        String json = "{}";
-        ObjectMapper objectMapper = new ObjectMapper();
-        JsonNode jsonNode = objectMapper.readTree(json);
-
-        return controllerProcess(codeId, jsonNode);
+        return controllerProcess(codeId, "");
     }
 
-    @DeleteMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> deleteController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+    @DeleteMapping(path = "/run/{id}", produces = "application/json")
+    public ResponseEntity<Object> deleteController(@Nullable @RequestBody String requestedCode, @PathVariable("id") UUID codeId) throws Exception{
 
         return controllerProcess(codeId, requestedCode);
     }
 
-    @PutMapping(path = "/run/{id}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> putController(@RequestBody JsonNode requestedCode, @PathVariable("id") UUID codeId) throws Exception{
+    @PutMapping(path = "/run/{id}", produces = "application/json")
+    public ResponseEntity<Object> putController(@Nullable @RequestBody String requestedCode, @PathVariable("id") UUID codeId) throws Exception{
 
         return controllerProcess(codeId, requestedCode);
     }
 
-    private ResponseEntity<Object> controllerProcess(UUID codeId, JsonNode requestedCode){
+    private ResponseEntity<Object> controllerProcess(UUID codeId, String requestedCode){
 
-        RunRequest runRequest = new RunRequest(codeId, requestedCode.toString());
+        RunRequest runRequest = new RunRequest(codeId, requestedCode);
 
         CodeRunResponse codeRunResponse  = runService.run(runRequest);
 

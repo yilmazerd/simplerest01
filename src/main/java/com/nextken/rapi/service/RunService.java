@@ -26,10 +26,12 @@ public class RunService {
 
         // 1. Read raw code from repository
         CodeBlock codeBlock = codeBlockService.read(runRequest.getCodeBlockId());
+        // 1.2 Add users request (if any) to the codeblock
+        codeBlock = codeBlock.addUsersCode(runRequest.getCodeString());
         // 2. Out of raw code, create the executable code
         createExecutableCode(codeBlock);
         // 3. Depening on the compiler, execute the new code
-        String logs = executeCode(codeBlock, runRequest.getCodeString());
+        String logs = executeCode(codeBlock);
         // 4. Collect the results and return
         JSONParser parser = new JSONParser();
         JSONObject json = new JSONObject();
@@ -99,20 +101,14 @@ public class RunService {
         }
     }
 
-    private String executeCode(CodeBlock codeBlock, String runRequestBody) {
-
-        // TODO REMOVE THIS LIMIT. Needed for command line argument passing to work
-        // TODO At this time, client must limit the request to 600 characters
-        if (runRequestBody.length() > 600) {
-            runRequestBody = "";
-        }
+    private String executeCode(CodeBlock codeBlock) {
 
         String fileName = codeBlock.getCodeBlockId().toString() + "." + getExtension(codeBlock);
         String executor = getExecutor(codeBlock);
 
         ProcessBuilder processBuilder = new ProcessBuilder();
         if (executor == "java") {
-            processBuilder.command("bash", "-c", executor + " " + fileName + " " + runRequestBody);
+            processBuilder.command("bash", "-c", executor + " " + fileName );
         }
          else {
             processBuilder.command("bash", "-c", executor + " " + fileName );

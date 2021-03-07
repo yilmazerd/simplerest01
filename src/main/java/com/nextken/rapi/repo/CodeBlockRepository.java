@@ -65,8 +65,8 @@ public class CodeBlockRepository {
             String compiler = item.getString("compiler");
             String timeStamp = item.getString("timeStamp");
 
-            System.out.println("Printing item after retrieving it....");
-            System.out.println(item.toJSONPretty());
+            //System.out.println("Printing item after retrieving it....");
+            //System.out.println(item.toJSONPretty());
 
             codeBlock = new CodeBlock(code, CBCompiler.valueOf(compiler), Instant.parse(timeStamp),codeBlockId);
 
