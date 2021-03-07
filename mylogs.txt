@@ -55,3 +55,127 @@
 2021-03-06 23:05:31.358  INFO 3900 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-03-06 23:05:31.359  INFO 3900 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2021-03-06 23:05:54.856  INFO 3900 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-06 23:36:58.068  INFO 4627 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 4627 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-06 23:36:58.072  INFO 4627 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-06 23:36:58.781  INFO 4627 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-06 23:36:58.788  INFO 4627 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-06 23:36:58.789  INFO 4627 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-06 23:36:58.845  INFO 4627 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-06 23:36:58.845  INFO 4627 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 729 ms
+2021-03-06 23:36:59.424  INFO 4627 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-06 23:36:59.585  INFO 4627 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-06 23:36:59.597  INFO 4627 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.864 seconds (JVM running for 2.383)
+2021-03-06 23:38:54.570  INFO 4627 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-06 23:38:54.571  INFO 4627 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-06 23:38:54.572  INFO 4627 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-06 23:38:55.197  INFO 4627 --- [http-nio-5000-exec-1] c.nextken.rapi.service.CodeBlockService  : Created codeBlock : 	package examples;
+	
+	/*
+	Example class, use https://www.freeformatter.com/java-dotnet-escape.html#ad-output for converting Java to string
+	 */
+	public class remo{
+	    public static void main(String[] args) {
+	        Person person = new Person("##INSTANTFUNCTION##","Edison");
+	        InstantFunctionResponse.responseBuilder(502,person.toString());
+	    }
+	}
+	
+	class Person {
+	    String firstName;
+	    String lastName;
+	
+	    Person (String firstName, String lastName) {
+	        this.firstName = firstName;
+	        this.lastName = lastName;
+	    }
+	
+	    @Override
+	    public String toString() {
+	        //return "{\\r\\n\\t\\\"firstName\\\": \\\"" + firstName + "\\\",\\r\\n\\t\\\"lastName\\\": \\\"" + lastName + "\\\"\\r\\n}";
+	        return "{ \"firstName\" : "+firstName+", \"lastName\" : "+lastName+" }";
+	    }
+	}
+	
+	class InstantFunctionResponse {
+	    public static void responseBuilder(int httpStatusCode, String responseObject) {
+	        System.out.println("httpStatusCode:"+httpStatusCode);
+	        System.out.println("responseObject:"+responseObject);
+	    }
+	
+	    public static void responseBuilder(String responseObject) {
+	        responseBuilder(502, responseObject);
+	    }
+	
+	}
+, with Id: 3292cc51-55f6-490b-88f7-bd6fef98319f
+2021-03-06 23:39:30.448  WARN 4627 --- [http-nio-5000-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2021-03-06 23:39:43.293  WARN 4627 --- [http-nio-5000-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain' not supported]
+2021-03-06 23:40:10.218  INFO 4627 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-06 23:40:56.041  INFO 4696 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 4696 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-06 23:40:56.044  INFO 4696 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-06 23:40:56.760  INFO 4696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-06 23:40:56.767  INFO 4696 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-06 23:40:56.767  INFO 4696 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-06 23:40:56.828  INFO 4696 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-06 23:40:56.829  INFO 4696 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 748 ms
+2021-03-06 23:40:57.414  INFO 4696 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-06 23:40:57.576  INFO 4696 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-06 23:40:57.587  INFO 4696 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.857 seconds (JVM running for 2.335)
+2021-03-06 23:40:57.995  INFO 4696 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-06 23:40:57.996  INFO 4696 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-06 23:40:57.997  INFO 4696 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-06 23:44:23.758  INFO 4696 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-06 23:44:47.994  INFO 4777 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 4777 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-06 23:44:47.996  INFO 4777 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-06 23:44:48.703  INFO 4777 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-06 23:44:48.710  INFO 4777 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-06 23:44:48.710  INFO 4777 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-06 23:44:48.766  INFO 4777 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-06 23:44:48.767  INFO 4777 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 729 ms
+2021-03-06 23:44:49.313  INFO 4777 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-06 23:44:49.474  INFO 4777 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-06 23:44:49.484  INFO 4777 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.803 seconds (JVM running for 2.286)
+2021-03-06 23:44:56.389  INFO 4777 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-06 23:44:56.390  INFO 4777 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-06 23:44:56.391  INFO 4777 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-03-06 23:44:56.860  INFO 4777 --- [http-nio-5000-exec-2] c.nextken.rapi.service.CodeBlockService  : Created codeBlock : 	package examples;
+	
+	/*
+	Example class, use https://www.freeformatter.com/java-dotnet-escape.html#ad-output for converting Java to string
+	 */
+	public class remo{
+	    public static void main(String[] args) {
+	        Person person = new Person("Thomas","Edison");
+	        InstantFunctionResponse.responseBuilder(502,person.toString());
+	    }
+	}
+	
+	class Person {
+	    String firstName;
+	    String lastName;
+	
+	    Person (String firstName, String lastName) {
+	        this.firstName = firstName;
+	        this.lastName = lastName;
+	    }
+	
+	    @Override
+	    public String toString() {
+	        //return "{\\r\\n\\t\\\"firstName\\\": \\\"" + firstName + "\\\",\\r\\n\\t\\\"lastName\\\": \\\"" + lastName + "\\\"\\r\\n}";
+	        return "{ \"firstName\" : "+firstName+", \"lastName\" : "+lastName+" }";
+	    }
+	}
+	
+	class InstantFunctionResponse {
+	    public static void responseBuilder(int httpStatusCode, String responseObject) {
+	        System.out.println("httpStatusCode:"+httpStatusCode);
+	        System.out.println("responseObject:"+responseObject);
+	    }
+	
+	    public static void responseBuilder(String responseObject) {
+	        responseBuilder(502, responseObject);
+	    }
+	
+	}
+, with Id: b2c0aa33-917a-4eff-b3a5-d7c21e735a83
+2021-03-06 23:45:41.798  INFO 4777 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

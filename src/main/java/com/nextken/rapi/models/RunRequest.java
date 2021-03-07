@@ -17,11 +17,6 @@ public class RunRequest {
 
     public String getCodeString() { return codeString;}
 
-    public RunRequest(UUID codeBlockId, Object runRequestBlock) {
-        this.codeBlockId = codeBlockId;
-        this.runRequestBlock = runRequestBlock;
-    }
-
     public RunRequest(UUID codeBlockId, String codeString) {
         this.codeBlockId = codeBlockId;
         this.codeString = codeString;

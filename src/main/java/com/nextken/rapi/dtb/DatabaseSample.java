@@ -77,8 +77,8 @@ public class DatabaseSample {
 
             Item item = table.getItem("Id", 120, "Id, ISBN, Title, Authors", null);
 
-            System.out.println("Printing item after retrieving it....");
-            System.out.println(item.toJSONPretty());
+            //System.out.println("Printing item after retrieving it....");
+            //System.out.println(item.toJSONPretty());
 
         }
         catch (Exception e) {

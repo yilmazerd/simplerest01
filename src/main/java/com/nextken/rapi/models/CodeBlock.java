@@ -1,5 +1,7 @@
 package com.nextken.rapi.models;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.UUID;
@@ -10,6 +12,7 @@ public class CodeBlock {
     private UUID codeBlockId;
     private CBCompiler compiler;
     private Instant timeStamp;
+    private final String INSTANT_FUNCTION_STRING_ARRANGER = "##INSTANTFUNCTION##";
 
     public UUID getCodeBlockId() {
         return codeBlockId;
@@ -45,6 +48,15 @@ public class CodeBlock {
     public CodeBlock() {
         this.timeStamp = Instant.now();
         this.codeBlockId = UUID.randomUUID();
+    }
+
+    public CodeBlock addUsersCode(String usersCode) {
+        String newCode = this.getCode();
+        if (StringUtils.isNotBlank(usersCode)) {
+            newCode = this.getCode().replace(INSTANT_FUNCTION_STRING_ARRANGER, usersCode);
+        };
+        //CodeBlock(String code, CBCompiler cbCompiler, Instant timestamp, UUID codeBlockId)
+        return new CodeBlock(newCode, this.getCompiler(), this.getTimeStamp(), this.getCodeBlockId());
     }
 
 //TODO: Add builder
