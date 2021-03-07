@@ -10,6 +10,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -46,7 +47,7 @@ public class MockController {
     private static int MAX_RESPONSE_DELAY = 35000;
 
     @RequestMapping(path = "/mock")
-    public ResponseEntity<Object> reqController(@RequestBody String request,
+    public ResponseEntity<Object> reqController(@Nullable @RequestBody String request,
                                                  @RequestHeader Map<String, String> headers,
                                                  @RequestParam(value = RESPONSE_CODE_HEADER, required = false) String responseCode,
                                                  @RequestParam(value = DELAY_HEADER, required = false) String responseDelay,
@@ -71,13 +72,7 @@ public class MockController {
                                                Map<String, String> headers,
                                                Map<String, String> queryParams) {
 
-        // Get response code
-        //String resourceURL = ObjectUtils.firstNonNull(headers.get(URL_HEADER),request.getParameter(URL_HEADER));
-        //String contentType = ObjectUtils.firstNonNull(request.getHeader(CONTENT_TYPE),request.getParameter(CONTENT_TYPE));
-        //String responseFromUrl = null;
-
         //Get response content
-        //DEFAULT_RESPONSE_CONTENT
         String responseContent = ObjectUtils.firstNonNull(headers.get(RESPONSE_CONTENT),queryParams.get(RESPONSE_CONTENT),DEFAULT_RESPONSE_CONTENT);
         JsonNode jsonNode = mapper.createObjectNode();
         try {

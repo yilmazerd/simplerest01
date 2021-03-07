@@ -20,6 +20,10 @@ SMP-007, Run Python
 
 SMP-008, Add mock endpoint
 
+SMP-009, Fix Mock Endpoint in prod (fix some loging as well)
+
+
+
 
 UI
 -- Add tutorial
