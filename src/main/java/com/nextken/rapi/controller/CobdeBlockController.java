@@ -68,7 +68,6 @@ public class CobdeBlockController {
 
         cbResponse = codeBlockService.create(cbRequest);
 
-        System.out.println("Returning response");
         return ResponseEntity.ok()
                 .body(cbResponse);
     }

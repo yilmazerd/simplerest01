@@ -40,18 +40,19 @@ public class RunService {
         CodeRunResponse codeRunResponse = new CodeRunResponse();
 
         // TODO: Convert to a method
+        // TODO: Not necessary if query parameters work ok
         // Find status code
-        int statusCodeInt = 200;
-
-        try {
-            int statusCodePointer = logs.indexOf("statusCode");
-            String statusCode = logs.substring(statusCodePointer+15,statusCodePointer+18);
-            statusCodeInt = Integer.parseInt(statusCode);
-        } catch (Exception e) {
-            statusCodeInt = 200;
-        }
-
-        codeRunResponse.setResponseCode(statusCodeInt);
+//        int statusCodeInt = 200;
+//
+//        try {
+//            int statusCodePointer = logs.indexOf("statusCode");
+//            String statusCode = logs.substring(statusCodePointer+15,statusCodePointer+18);
+//            statusCodeInt = Integer.parseInt(statusCode);
+//        } catch (Exception e) {
+//            statusCodeInt = 200;
+//        }
+//
+//        codeRunResponse.setResponseCode(statusCodeInt);
 
         // TODO: Throw error if logs are not long enough or if the don't have the log statement for response
 
