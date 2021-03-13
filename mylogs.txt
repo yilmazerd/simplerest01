@@ -1,0 +1,63 @@
+2021-03-10 04:22:42.688  INFO 2140 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-10 04:22:48.902  INFO 3253 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 3253 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-10 04:22:48.911  INFO 3253 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-10 04:22:49.658  INFO 3253 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-10 04:22:49.666  INFO 3253 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-10 04:22:49.667  INFO 3253 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-10 04:22:49.735  INFO 3253 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-10 04:22:49.735  INFO 3253 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 765 ms
+2021-03-10 04:22:50.275  INFO 3253 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-10 04:22:50.423  INFO 3253 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-10 04:22:50.434  INFO 3253 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.893 seconds (JVM running for 2.429)
+2021-03-10 04:22:54.130  INFO 3253 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-10 04:22:54.131  INFO 3253 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-10 04:22:54.132  INFO 3253 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-03-10 04:22:54.173  WARN 3253 --- [http-nio-5000-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:22:55.012  WARN 3253 --- [http-nio-5000-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:22:55.669  WARN 3253 --- [http-nio-5000-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:22:56.405  WARN 3253 --- [http-nio-5000-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:22:57.509  WARN 3253 --- [http-nio-5000-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:22:58.152  WARN 3253 --- [http-nio-5000-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:22:58.753  WARN 3253 --- [http-nio-5000-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:22:59.392  WARN 3253 --- [http-nio-5000-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:23:07.035  WARN 3253 --- [http-nio-5000-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:23:10.649  INFO 3253 --- [http-nio-5000-exec-10] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 6e846811-30e2-44c1-9056-06f1f10095bd
+2021-03-10 04:23:12.665  WARN 3253 --- [http-nio-5000-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:23:13.409  WARN 3253 --- [http-nio-5000-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:23:23.857  WARN 3253 --- [http-nio-5000-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsedelay' is not present]
+2021-03-10 04:24:06.222  INFO 3253 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-10 04:24:10.762  INFO 3281 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 3281 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-10 04:24:10.764  INFO 3281 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-10 04:24:11.583  INFO 3281 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-10 04:24:11.591  INFO 3281 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-10 04:24:11.592  INFO 3281 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-10 04:24:11.650  INFO 3281 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-10 04:24:11.650  INFO 3281 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 837 ms
+2021-03-10 04:24:12.171  INFO 3281 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-10 04:24:12.310  INFO 3281 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-10 04:24:12.320  INFO 3281 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.868 seconds (JVM running for 2.358)
+2021-03-10 04:24:18.074  INFO 3281 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-10 04:24:18.076  INFO 3281 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-10 04:24:18.077  INFO 3281 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-10 04:24:18.111  WARN 3281 --- [http-nio-5000-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsecode' is not present]
+2021-03-10 04:24:19.046  WARN 3281 --- [http-nio-5000-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsecode' is not present]
+2021-03-10 04:24:19.714  WARN 3281 --- [http-nio-5000-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsecode' is not present]
+2021-03-10 04:24:20.455  WARN 3281 --- [http-nio-5000-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsecode' is not present]
+2021-03-10 04:24:21.060  WARN 3281 --- [http-nio-5000-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsecode' is not present]
+2021-03-10 04:24:21.678  WARN 3281 --- [http-nio-5000-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'responsecode' is not present]
+2021-03-10 04:25:14.189  INFO 3281 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-10 04:25:19.496  INFO 3301 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 3301 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-10 04:25:19.498  INFO 3301 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-10 04:25:20.504  INFO 3301 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-10 04:25:20.510  INFO 3301 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-10 04:25:20.511  INFO 3301 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-10 04:25:20.601  INFO 3301 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-10 04:25:20.602  INFO 3301 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1046 ms
+2021-03-10 04:25:21.074  INFO 3301 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-10 04:25:21.206  INFO 3301 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-10 04:25:21.216  INFO 3301 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.993 seconds (JVM running for 2.539)
+2021-03-10 04:25:21.986  INFO 3301 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-10 04:25:21.987  INFO 3301 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-10 04:25:21.988  INFO 3301 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-10 04:27:14.825  WARN 3301 --- [http-nio-5000-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'COPY' not supported]
+2021-03-10 04:30:56.312  INFO 3301 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

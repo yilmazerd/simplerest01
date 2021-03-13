@@ -1,0 +1,15 @@
+2021-03-13 12:53:03.249  INFO 3427 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 3427 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 12:53:03.252  INFO 3427 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 12:53:04.283  INFO 3427 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 12:53:04.292  INFO 3427 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 12:53:04.293  INFO 3427 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 12:53:04.374  INFO 3427 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 12:53:04.375  INFO 3427 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1061 ms
+2021-03-13 12:53:05.086  INFO 3427 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 12:53:05.332  INFO 3427 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 12:53:05.346  INFO 3427 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.501 seconds (JVM running for 3.214)
+2021-03-13 12:53:32.842  INFO 3427 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 12:53:32.844  INFO 3427 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 12:53:32.845  INFO 3427 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 12:57:58.301  INFO 3427 --- [http-nio-5000-exec-4] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 3085d828-967a-4d26-b33e-4421bf292841
+2021-03-13 13:08:26.803  INFO 3427 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
