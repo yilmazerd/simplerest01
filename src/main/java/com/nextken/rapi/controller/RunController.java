@@ -83,7 +83,7 @@ public class RunController {
         CodeRunResponse codeRunResponse  = runService.run(runRequest);
 
         return ResponseEntity
-                .status(200)
+                .status(codeRunResponse.getResponseCode())
                 .body(codeRunResponse.getResponse());
 
     }

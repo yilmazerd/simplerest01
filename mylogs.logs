@@ -1,0 +1,210 @@
+2021-03-13 23:02:58.729  INFO 8196 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8196 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:02:58.731  INFO 8196 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:02:59.543  INFO 8196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:02:59.552  INFO 8196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:02:59.553  INFO 8196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:02:59.617  INFO 8196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:02:59.618  INFO 8196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 832 ms
+2021-03-13 23:03:00.212  INFO 8196 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:03:00.379  INFO 8196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:03:00.392  INFO 8196 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.027 seconds (JVM running for 2.613)
+2021-03-13 23:03:56.438  INFO 8196 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:03:56.439  INFO 8196 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:03:56.440  INFO 8196 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:03:56.948  INFO 8196 --- [http-nio-5000-exec-2] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: b72eed59-ab70-4804-ae67-061d2c3f9bda
+2021-03-13 23:04:43.523  INFO 8196 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:04:47.646  INFO 8234 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8234 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:04:47.651  INFO 8234 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:04:48.466  INFO 8234 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:04:48.472  INFO 8234 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:04:48.473  INFO 8234 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:04:48.532  INFO 8234 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:04:48.532  INFO 8234 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 799 ms
+2021-03-13 23:04:49.104  INFO 8234 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:04:49.261  INFO 8234 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:04:49.274  INFO 8234 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.063 seconds (JVM running for 3.096)
+2021-03-13 23:04:49.516  INFO 8234 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:04:49.518  INFO 8234 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:04:49.519  INFO 8234 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:04:50.146  INFO 8234 --- [http-nio-5000-exec-1] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: e5fc4d12-be89-4a0d-8ca2-2b7ffa9e7830
+2021-03-13 23:05:51.828  INFO 8234 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:06:04.747  INFO 8263 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8263 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:06:04.750  INFO 8263 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:06:05.823  INFO 8263 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:06:05.830  INFO 8263 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:06:05.830  INFO 8263 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:06:05.885  INFO 8263 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:06:05.885  INFO 8263 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1066 ms
+2021-03-13 23:06:06.472  INFO 8263 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:06:06.638  INFO 8263 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:06:06.650  INFO 8263 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.322 seconds (JVM running for 3.059)
+2021-03-13 23:06:07.021  INFO 8263 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:06:07.022  INFO 8263 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:06:07.023  INFO 8263 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:06:07.677  INFO 8263 --- [http-nio-5000-exec-2] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 96b704d9-0700-4d1d-8430-5348979f3a72
+2021-03-13 23:06:11.533  INFO 8263 --- [http-nio-5000-exec-5] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: eb9cb752-e51b-46fa-95ac-3dadcfa8b5c0
+2021-03-13 23:06:17.954  INFO 8263 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:06:19.643  INFO 8276 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8276 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:06:19.651  INFO 8276 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:06:20.439  INFO 8276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:06:20.448  INFO 8276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:06:20.449  INFO 8276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:06:20.509  INFO 8276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:06:20.509  INFO 8276 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 798 ms
+2021-03-13 23:06:21.055  INFO 8276 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:06:21.218  INFO 8276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:06:21.229  INFO 8276 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.009 seconds (JVM running for 2.705)
+2021-03-13 23:06:22.516  INFO 8276 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:06:22.517  INFO 8276 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:06:22.518  INFO 8276 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:06:23.042  INFO 8276 --- [http-nio-5000-exec-1] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 901ec0f3-d035-4e24-9f73-d0d42fbc57f5
+2021-03-13 23:06:30.363  INFO 8276 --- [http-nio-5000-exec-5] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: aba7841e-39b2-49dc-9e33-037798bd9298
+2021-03-13 23:07:42.368  INFO 8276 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:07:48.968  INFO 8307 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8307 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:07:48.971  INFO 8307 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:07:49.729  INFO 8307 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:07:49.736  INFO 8307 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:07:49.737  INFO 8307 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:07:49.792  INFO 8307 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:07:49.793  INFO 8307 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 775 ms
+2021-03-13 23:07:50.327  INFO 8307 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:07:50.483  INFO 8307 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:07:50.494  INFO 8307 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.863 seconds (JVM running for 2.469)
+2021-03-13 23:07:52.831  INFO 8307 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:07:52.832  INFO 8307 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:07:52.833  INFO 8307 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:08:59.950  INFO 8307 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:09:03.508  INFO 8327 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8327 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:09:03.511  INFO 8327 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:09:04.417  INFO 8327 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:09:04.424  INFO 8327 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:09:04.424  INFO 8327 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:09:04.481  INFO 8327 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:09:04.481  INFO 8327 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 913 ms
+2021-03-13 23:09:05.043  INFO 8327 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:09:05.222  INFO 8327 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:09:05.234  INFO 8327 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.099 seconds (JVM running for 2.723)
+2021-03-13 23:09:06.466  INFO 8327 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:09:06.467  INFO 8327 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:09:06.468  INFO 8327 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:09:20.849  INFO 8327 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:09:24.269  INFO 8359 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8359 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:09:24.270  INFO 8359 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:09:25.004  INFO 8359 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:09:25.010  INFO 8359 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:09:25.011  INFO 8359 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:09:25.067  INFO 8359 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:09:25.067  INFO 8359 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 743 ms
+2021-03-13 23:09:25.563  INFO 8359 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:09:25.699  INFO 8359 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:09:25.710  INFO 8359 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.735 seconds (JVM running for 2.21)
+2021-03-13 23:09:26.358  INFO 8359 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:09:26.359  INFO 8359 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:09:26.361  INFO 8359 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-03-13 23:09:51.747  INFO 8359 --- [http-nio-5000-exec-5] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: ece47dad-3204-4669-9bbd-a7fce1924f09
+2021-03-13 23:10:18.147  INFO 8359 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:10:21.446  INFO 8384 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8384 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:10:21.449  INFO 8384 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:10:22.309  INFO 8384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:10:22.316  INFO 8384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:10:22.316  INFO 8384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:10:22.374  INFO 8384 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:10:22.374  INFO 8384 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 864 ms
+2021-03-13 23:10:22.921  INFO 8384 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:10:23.074  INFO 8384 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:10:23.086  INFO 8384 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.027 seconds (JVM running for 2.658)
+2021-03-13 23:10:24.933  INFO 8384 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:10:24.934  INFO 8384 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:10:24.936  INFO 8384 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:10:54.491  INFO 8384 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:10:57.714  INFO 8401 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8401 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:10:57.718  INFO 8401 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:10:58.571  INFO 8401 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:10:58.579  INFO 8401 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:10:58.579  INFO 8401 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:10:58.640  INFO 8401 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:10:58.640  INFO 8401 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 857 ms
+2021-03-13 23:10:59.244  INFO 8401 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:10:59.405  INFO 8401 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:10:59.417  INFO 8401 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.1 seconds (JVM running for 2.712)
+2021-03-13 23:11:00.115  INFO 8401 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:11:00.117  INFO 8401 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:11:00.118  INFO 8401 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:12:31.920  INFO 8401 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:12:35.416  INFO 8429 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8429 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:12:35.419  INFO 8429 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:12:36.120  INFO 8429 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:12:36.126  INFO 8429 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:12:36.126  INFO 8429 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:12:36.180  INFO 8429 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:12:36.180  INFO 8429 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 719 ms
+2021-03-13 23:12:36.669  INFO 8429 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:12:36.833  INFO 8429 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:12:36.843  INFO 8429 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.764 seconds (JVM running for 2.304)
+2021-03-13 23:12:37.546  INFO 8429 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:12:37.547  INFO 8429 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:12:37.548  INFO 8429 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:16:51.873  INFO 8429 --- [http-nio-5000-exec-8] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: eba84c45-dcfb-4aa2-a924-7d92f2842c79
+2021-03-13 23:17:39.630  INFO 8429 --- [http-nio-5000-exec-4] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 600535d2-ad95-4d05-84d5-b057cdf6846f
+2021-03-13 23:18:04.437  INFO 8429 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:18:08.690  INFO 8527 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8527 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:18:08.693  INFO 8527 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:18:09.487  INFO 8527 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:18:09.494  INFO 8527 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:18:09.494  INFO 8527 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:18:09.562  INFO 8527 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:18:09.563  INFO 8527 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 817 ms
+2021-03-13 23:18:10.168  INFO 8527 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:18:10.316  INFO 8527 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:18:10.327  INFO 8527 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.016 seconds (JVM running for 2.705)
+2021-03-13 23:18:10.654  INFO 8527 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:18:10.655  INFO 8527 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:18:10.657  INFO 8527 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:21:59.541  INFO 8527 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:22:05.422  INFO 8603 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8603 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:22:05.424  INFO 8603 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:22:06.229  INFO 8603 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:22:06.236  INFO 8603 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:22:06.236  INFO 8603 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:22:06.296  INFO 8603 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:22:06.296  INFO 8603 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 806 ms
+2021-03-13 23:22:06.862  INFO 8603 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:22:07.012  INFO 8603 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:22:07.026  INFO 8603 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.994 seconds (JVM running for 2.6)
+2021-03-13 23:22:07.165  INFO 8603 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:22:07.166  INFO 8603 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:22:07.167  INFO 8603 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-03-13 23:22:31.976  INFO 8603 --- [http-nio-5000-exec-8] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 042111bf-88b6-4dcc-baf7-9337ee9e145a
+2021-03-13 23:27:27.523  INFO 8603 --- [http-nio-5000-exec-4] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 82604e3b-2af9-4285-af43-ba786d2c2842
+2021-03-13 23:27:45.120  INFO 8603 --- [http-nio-5000-exec-10] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 8a620352-0585-4f9d-906f-9457dfdbb35e
+2021-03-13 23:28:00.298  INFO 8603 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:28:03.541  INFO 8751 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8751 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:28:03.545  INFO 8751 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:28:04.334  INFO 8751 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:28:04.340  INFO 8751 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:28:04.341  INFO 8751 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:28:04.403  INFO 8751 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:28:04.403  INFO 8751 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 814 ms
+2021-03-13 23:28:04.944  INFO 8751 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:28:05.102  INFO 8751 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:28:05.113  INFO 8751 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.962 seconds (JVM running for 2.761)
+2021-03-13 23:28:09.258  INFO 8751 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:28:09.259  INFO 8751 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:28:09.260  INFO 8751 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:28:35.463  INFO 8751 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:29:06.241  INFO 8775 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 8775 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-03-13 23:29:06.243  INFO 8775 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-03-13 23:29:07.022  INFO 8775 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-03-13 23:29:07.029  INFO 8775 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-13 23:29:07.029  INFO 8775 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-13 23:29:07.086  INFO 8775 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-13 23:29:07.086  INFO 8775 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 801 ms
+2021-03-13 23:29:07.553  INFO 8775 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-13 23:29:07.693  INFO 8775 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-03-13 23:29:07.703  INFO 8775 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.766 seconds (JVM running for 2.262)
+2021-03-13 23:29:08.202  INFO 8775 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-13 23:29:08.203  INFO 8775 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-13 23:29:08.204  INFO 8775 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-03-13 23:29:08.743  INFO 8775 --- [http-nio-5000-exec-1] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 4be57ab6-dddc-4100-bd7f-143194a59acb
+2021-03-13 23:29:40.357  INFO 8775 --- [http-nio-5000-exec-4] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 3a695c17-e0a4-4ae5-b2cd-50f2b3e7eae4
+2021-03-13 23:32:38.556  INFO 8775 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

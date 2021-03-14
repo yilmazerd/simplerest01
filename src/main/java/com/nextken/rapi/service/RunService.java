@@ -45,8 +45,9 @@ public class RunService {
 
         try {
             int statusCodePointer = logs.indexOf("statusCode");
-            String statusCode = logs.substring(statusCodePointer+15,statusCodePointer+18);
+            String statusCode = logs.substring(statusCodePointer+11,statusCodePointer+14);
             statusCodeInt = Integer.parseInt(statusCode);
+            logs = logs.substring(0,statusCodePointer) + logs.substring(statusCodePointer+15, logs.length());
         } catch (Exception e) {
             statusCodeInt = 200;
         }
