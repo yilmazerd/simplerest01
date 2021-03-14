@@ -1,14 +1,12 @@
 package com.nextken.rapi.service;
 
 import com.nextken.rapi.models.*;
-import com.nextken.rapi.repo.CodeBlockRepository;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
-import java.util.UUID;
 
 @Service
 public class RunService {
@@ -41,16 +39,18 @@ public class RunService {
 
         // TODO: Convert to a method
         // Find status code
-        int statusCodeInt = 200;
+        int statusCodeInt;
 
         try {
             int statusCodePointer = logs.indexOf("statusCode");
-            String statusCode = logs.substring(statusCodePointer+15,statusCodePointer+18);
+            String statusCode = logs.substring(statusCodePointer+11,statusCodePointer+14);
             statusCodeInt = Integer.parseInt(statusCode);
+            logs = logs.substring(0,statusCodePointer) + logs.substring(statusCodePointer+15, logs.length());
         } catch (Exception e) {
             statusCodeInt = 200;
         }
 
+        //FIXME: CodeRunResponse should have a constructor that works with the String ClientCode and those needs to be methods in that object
         codeRunResponse.setResponseCode(statusCodeInt);
 
         // TODO: Throw error if logs are not long enough or if the don't have the log statement for response

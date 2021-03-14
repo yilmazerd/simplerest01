@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ## LOG DUMP ##
-myLogs.txt
+.logs
