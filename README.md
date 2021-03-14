@@ -26,7 +26,10 @@ SMP-010, Client can enter any string and in the fucntion there is a String varia
 
 SMP-011, User adds delay and response code as a query parameter
 
+SMP-011-a, User adds delay as query parameter but response code stays in the code
+
 SMP-012, Create examples. Simple Java examples to mock response and simply python examples to mock response
+
 
 BL: Limit code execution to 1 second
 
