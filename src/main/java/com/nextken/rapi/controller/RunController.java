@@ -20,7 +20,6 @@ public class RunController {
     private static final String RESPONSE_CODE_HEADER = "responsecode";
 
     // All controllers return the same
-
     @PostMapping(path = "/run/{id}", produces = "application/json")
     public ResponseEntity<Object> postController(
             @Nullable @RequestBody String requestedCode,
