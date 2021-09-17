@@ -53,10 +53,18 @@ public class CodeBlock {
     public CodeBlock addUsersCode(String usersCode) {
         String newCode = this.getCode();
         if (StringUtils.isNotBlank(usersCode)) {
-            newCode = this.getCode().replace(INSTANT_FUNCTION_STRING_ARRANGER, usersCode);
+            String usersCodeCleaned = cleanCode(usersCode);
+            newCode = this.getCode().replace(INSTANT_FUNCTION_STRING_ARRANGER, usersCodeCleaned);
+            int s = 3;
         };
         //CodeBlock(String code, CBCompiler cbCompiler, Instant timestamp, UUID codeBlockId)
         return new CodeBlock(newCode, this.getCompiler(), this.getTimeStamp(), this.getCodeBlockId());
+    }
+
+    private String cleanCode(String str) {
+        str = str.replace("\"", "\\\"");
+        str = str.replaceAll("[\\t\\n\\r]+"," ");
+        return str;
     }
 
 //TODO: Add builder
