@@ -2,7 +2,7 @@
 from flask import Flask, request
 import subprocess
 import time
-
+### make sure to run this with python3
 app = Flask(__name__)
 
 @app.route('/user', methods=['POST'])
