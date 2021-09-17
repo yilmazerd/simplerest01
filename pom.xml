@@ -30,6 +30,7 @@
             <version>1.11.926</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
