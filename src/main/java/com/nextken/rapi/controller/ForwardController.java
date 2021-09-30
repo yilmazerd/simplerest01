@@ -27,7 +27,7 @@ public class ForwardController {
 
 
     @PostMapping(path = "/forward")
-    public ResponseEntity<Object> postController(
+    public Object postController(
             @RequestBody String codeBulk,
             @RequestHeader Map<String, String> headers
             ) throws Exception{
@@ -92,16 +92,14 @@ public class ForwardController {
             logger.log(Level.INFO, s2_3);
             JsonNode newNode = objectMapper.readTree(s2);
 
-            return ResponseEntity.ok()
-                    .body(jsonNodeResponse);
+            return jsonNodeResponse;
 
             //return newNode;
         } catch (Exception e) {
             logger.log(Level.INFO, "Can not cast to jSON");
         }
 
-        return ResponseEntity.ok()
-                .body(result);
+        return result;
 
     }
 
