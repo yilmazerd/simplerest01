@@ -13,12 +13,13 @@ import java.util.Map;
 public class RemoveController {
 
     @CrossOrigin(origins = {"null", "http://localhost:63342", "https://instantfunction.com","localhost:63342"})
-    @PostMapping(path = "/forwardss222", produces = "application/json")
+    @PostMapping(path = "/forward", produces = "application/json")
     public ResponseEntity<Object> postFormationController2(
             @RequestBody String cbRequestIn,
             @RequestHeader Map<String, String> headers) throws Exception {
 
         CBResponse cbResponse = new CBResponse("hahaha");
+        System.out.println("SSSSS Testing out");
         return ResponseEntity.ok()
                 .body(cbResponse);
 
