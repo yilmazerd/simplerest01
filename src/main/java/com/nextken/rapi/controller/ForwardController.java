@@ -24,9 +24,13 @@ public class ForwardController {
     private static Logger logger = Logger.getLogger(ForwardController.class.getName());
 
     // All controllers return the same
-    @PostMapping(path = "/forward", produces = "application/json")
+
+
+    @PostMapping(path = "/forward", produces = "application/json", consumes = "text/plain")
     public Object postController(
-            @Nullable @RequestBody String codeBulk) throws Exception{
+            @RequestBody String codeBulk,
+            @RequestHeader Map<String, String> headers
+            ) throws Exception{
 
 
         char[] myChars = codeBulk.toCharArray();
