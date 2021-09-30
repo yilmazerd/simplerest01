@@ -26,7 +26,7 @@ public class ForwardController {
     // All controllers return the same
 
 
-    @PostMapping(path = "/forward", produces = "application/json", consumes = "text/plain")
+    @PostMapping(path = "/forward")
     public ResponseEntity<Object> postController(
             @RequestBody String codeBulk,
             @RequestHeader Map<String, String> headers
