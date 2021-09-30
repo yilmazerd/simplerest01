@@ -32,6 +32,7 @@ public class ForwardController {
             @RequestHeader Map<String, String> headers
             ) throws Exception{
 
+        logger.log(Level.INFO, "received request succesfully\n");
 
         char[] myChars = codeBulk.toCharArray();
         String newString = "";
