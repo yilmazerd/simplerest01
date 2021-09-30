@@ -1,4 +1,7 @@
 # simplerest01
+UI
+1 - Get familiar with githost.io pages. No need to deal with aws cloud front
+
 API
 -- Limit the time a function can execture to 1 second
 - Use AWS Lambda for executing java code
@@ -32,28 +35,9 @@ SMP-012, Create examples. Simple Java examples to mock response and simply pytho
 
 SMP-013, Develop a new controller that takes text and posts to py server as json
 
+SMP-014, Use the code in the repo and call the lambda with that code
+
 BL: Limit code execution to 1 second
-
-
-
-UI
--- Add tutorial
-
-UIX-001, Fix form with new controller (DONE)
-
-UIX-002, Integrate with woof for email capture
-
-UIX-003, Implement About and Features
-
-UIX-004, Add email capture
-
-UIX-005, Similar to woof there can be a screen that says how you want to start. 
-Start with existing applications or start from scratch. I think that existing applications
-can be better here becasue the amount of examples is very high.. 
-Basically saying after adding examples do this page
-
-UIX-006, Your function is ready page is should be redesigned so it's easy for user to 
-understand what to do with it and how to use it
 
 
 
