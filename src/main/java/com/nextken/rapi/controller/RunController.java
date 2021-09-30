@@ -20,7 +20,7 @@ public class RunController {
     private static final String RESPONSE_CODE_HEADER = "responsecode";
 
     // All controllers return the same
-    @PostMapping(path = "/run/{id}", produces = "application/json")
+    @PostMapping(path = "/runold/{id}", produces = "application/json")
     public ResponseEntity<Object> postController(
             @Nullable @RequestBody String requestedCode,
             @RequestParam (name = DELAY_HEADER, required = false) String delayHeader,
@@ -29,7 +29,7 @@ public class RunController {
         return controllerProcess(codeId, requestedCode, delayHeader);
     }
 
-    @PatchMapping(path = "/run/{id}", produces = "application/json")
+    @PatchMapping(path = "/runold/{id}", produces = "application/json")
     public ResponseEntity<Object> patchController(
             @Nullable @RequestBody String requestedCode,
             @RequestParam (name = DELAY_HEADER, required = false) String delayHeader,
@@ -38,7 +38,7 @@ public class RunController {
         return controllerProcess(codeId, requestedCode, delayHeader);
     }
 
-    @GetMapping(path = "/run/{id}", produces = "application/json")
+    @GetMapping(path = "/runold/{id}", produces = "application/json")
     public ResponseEntity<Object> getController(
             @PathVariable("id") UUID codeId,
             @RequestParam (name = DELAY_HEADER, required = false) String delayHeader
@@ -47,7 +47,7 @@ public class RunController {
         return controllerProcess(codeId, "", delayHeader);
     }
 
-    @DeleteMapping(path = "/run/{id}", produces = "application/json")
+    @DeleteMapping(path = "/runold/{id}", produces = "application/json")
     public ResponseEntity<Object> deleteController(
             @Nullable @RequestBody String requestedCode,
             @RequestParam (name = DELAY_HEADER, required = false) String delayHeader,
@@ -56,7 +56,7 @@ public class RunController {
         return controllerProcess(codeId, "", delayHeader);
     }
 
-    @PutMapping(path = "/run/{id}", produces = "application/json")
+    @PutMapping(path = "/runold/{id}", produces = "application/json")
     public ResponseEntity<Object> putController(
             @Nullable @RequestBody String requestedCode,
             @RequestParam (name = DELAY_HEADER, required = false) String delayHeader,
