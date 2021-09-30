@@ -37,5 +37,7 @@ SMP-013, Develop a new controller that takes text and posts to py server as json
 
 SMP-014, Use the code in the repo and call the lambda with that code
 
+SMP-015, Refactor the code, add tests, use the runner service to use aws lambda
+
 Code cleanup
 Validation
