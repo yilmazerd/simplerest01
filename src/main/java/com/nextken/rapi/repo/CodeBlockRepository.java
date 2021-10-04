@@ -65,9 +65,6 @@ public class CodeBlockRepository {
             String compiler = item.getString("compiler");
             String timeStamp = item.getString("timeStamp");
 
-            //System.out.println("Printing item after retrieving it....");
-            //System.out.println(item.toJSONPretty());
-
             codeBlock = new CodeBlock(code, CBCompiler.valueOf(compiler), Instant.parse(timeStamp),codeBlockId);
 
         }
@@ -79,62 +76,5 @@ public class CodeBlockRepository {
         return codeBlock;
     }
 
-    public void createOld(CodeBlock codeBlock){
-        // do nothing for now;
-        String fileName = codeBlock.getCodeBlockId().toString() + ".txt";
-        try {
-            File myObj = new File(fileName);
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-        FileWriter myWriter = null;
-
-        try {
-            myWriter = new FileWriter(fileName);
-            myWriter.write(codeBlock.getCode());
-
-            System.out.println("Successfully wrote to the file.");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        } finally {
-            if (myWriter != null ) {
-                try {
-                    myWriter.close();
-                } catch (IOException e) {
-                    System.out.println("An error occurred closing file " + e.toString());
-                }
-            }
-        }
-    }
-
-    public CodeBlock readOld(UUID codeBlockId){
-        String code = "";
-        String compiler;
-        try {
-            File myObj = new File(codeBlockId.toString() + ".txt");
-            Scanner myReader = new Scanner(myObj);
-            compiler = myReader.nextLine();
-            while (myReader.hasNextLine()) {
-                code += myReader.nextLine();
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        } catch (Exception e){
-            System.out.println("An error occurred. Exception was " + e.toString());
-            e.printStackTrace();
-        }
-
-        // TODO: GET COMPILER FROM DATA
-        return new CodeBlock(code, CBCompiler.JAVA11);
-    }
 
 }
