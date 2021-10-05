@@ -1,7 +1,6 @@
 package com.nextken.rapi.models;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class CBResponseError {
 

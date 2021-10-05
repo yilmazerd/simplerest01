@@ -1,8 +1,6 @@
 package com.nextken.rapi.service;
 
-import com.amazonaws.services.dynamodbv2.model.DeleteGlobalSecondaryIndexAction;
 import com.nextken.rapi.models.CBRequest;
-import com.nextken.rapi.models.CBResponse;
 import com.nextken.rapi.models.CBResponseError;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
