@@ -35,3 +35,5 @@ build/
 
 ## LOG DUMP ##
 .logs
+mylogs.logs
+*.logs
