@@ -39,16 +39,21 @@ SMP-014, Use the code in the repo and call the lambda with that code
 
 SMP-015, Refactor the code, add tests, use the runner service to use aws lambda
 
-
+this can wait 
 SMP-015a, When the code is invalid it returns
 File "/tmp/demofile2.py", line 1n    for (int i = 0; i< 10; ++) {n             ^nSyntaxError: invalid syntax
 catch that and throw bad request exception
 
+this can wait
 SMP-15b, make a custom bad request exception and catch that as 400 with meaningful error
 new controller doesn't support get.. it needs to support get
 lambda function making htppq requests, i'm not sure about this part
 
 SMP-16
+response changed from url to codeId
+controller names cleanedup
+cross origin clean up
+remove compiler requirement in the header
 
 Code cleanup
 Validation

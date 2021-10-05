@@ -6,26 +6,26 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class CBResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private String url;
+    private String codeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private CBResponseError error;
 
-    public String getUrl() {
-        return url;
+    public String getCodeId() {
+        return codeId;
     }
 
     public CBResponseError getError() {
         return error;
     }
 
-    public CBResponse(String url, CBResponseError cbResponseError) {
-        this.url = url;
+    public CBResponse(String codeId, CBResponseError cbResponseError) {
+        this.codeId = codeId;
         this.error = cbResponseError;
     }
 
-    public CBResponse(String url) {
-        this.url = url;
+    public CBResponse(String codeId) {
+        this.codeId = codeId;
     }
 
     public CBResponse(CBResponseError error) {
@@ -33,8 +33,8 @@ public class CBResponse {
     }
 
     @Deprecated
-    public CBResponse(String url, String errorMessage) {
-        this.url = url;
+    public CBResponse(String codeId, String errorMessage) {
+        this.codeId = codeId;
         this.error = new CBResponseError(errorMessage);
     }
 

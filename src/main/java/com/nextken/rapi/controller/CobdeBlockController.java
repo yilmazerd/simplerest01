@@ -26,6 +26,8 @@ public class CobdeBlockController {
 
     private final Logger LOGGER = Logger.getLogger(this.getClass().getName());
 
+    private static final int INPUT_CODE_CHAR_LIMIT = 10000;
+
     @Autowired
     CodeBlockService codeBlockService;
 
@@ -34,15 +36,41 @@ public class CobdeBlockController {
         return "hello-world";
     }
 
-    @CrossOrigin(origins = {"null", "http://localhost:63342", "https://instantfunction.com","localhost:63342"})
+
+    //@CrossOrigin(origins = {"null", "http://localhost:63342", "https://instantfunction.com","localhost:63342"})
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping(path = "/code", produces = "application/json")
+    public ResponseEntity<CBResponse> codeController(
+            @RequestBody String cbRequestIn,
+            @RequestHeader Map<String, String> headers) throws Exception {
+
+        return codeControllerResponse(cbRequestIn, headers);
+    }
+
+    @Deprecated
+    //@CrossOrigin(origins = {"null", "http://localhost:63342", "https://instantfunction.com","localhost:63342"})
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping(path = "/formation/codeblock2", produces = "application/json")
     public ResponseEntity<CBResponse> postFormationController2(
+            @RequestBody String cbRequestIn,
+            @RequestHeader Map<String, String> headers) throws Exception {
+
+        return codeControllerResponse(cbRequestIn, headers);
+
+    }
+
+
+    public ResponseEntity<CBResponse> codeControllerResponse(
             @RequestBody String cbRequestIn,
             @RequestHeader Map<String, String> headers) throws Exception {
         System.out.println("Received codeblock2 request");
         headers.keySet().forEach(k-> {
             System.out.println("key: " + k + " " + headers.get(k));
         });
+
+        if ( cbRequestIn.length() > INPUT_CODE_CHAR_LIMIT) {
+            throw new IllegalArgumentException("Input can not exceed " + INPUT_CODE_CHAR_LIMIT + " characters");
+        }
         CBResponse cbResponse;
         String errorStatement = null;
         if (cbRequestIn == null) {
@@ -58,10 +86,14 @@ public class CobdeBlockController {
 
 
         CBCompiler compiler;
-        try {
+        if (headers.get("compiler") == null)
+            compiler = CBCompiler.python_3_9;
+        else {
+            try {
                 compiler = CBCompiler.valueOf(headers.get("compiler"));
-        } catch (Exception e) {
-            throw new IllegalArgumentException("Incorrect compiler " + e.toString());
+            } catch (Exception e) {
+                compiler = CBCompiler.python_3_9;
+            }
         }
 
         CBRequest cbRequest = new CBRequest(cbRequestIn, "primaryKey","secondaryKey",compiler);
