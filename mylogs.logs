@@ -367,3 +367,36 @@ java.lang.IllegalArgumentException: Input can not exceed 100 characters
 2021-10-04 22:58:41.443  INFO 3156 --- [http-nio-5000-exec-5] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 976c33b9-ef1b-42d1-93b6-5a96f0c76055
 2021-10-04 22:58:42.058  INFO 3156 --- [http-nio-5000-exec-8] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 1579f67c-c1f2-4e7c-929d-d1173dcacecf
 2021-10-04 23:00:51.866  INFO 3156 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-04 23:04:33.381  INFO 3310 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 3310 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-10-04 23:04:33.385  INFO 3310 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-10-04 23:04:34.212  INFO 3310 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-10-04 23:04:34.220  INFO 3310 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-04 23:04:34.220  INFO 3310 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-04 23:04:34.279  INFO 3310 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-04 23:04:34.279  INFO 3310 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 801 ms
+2021-10-04 23:04:34.791  INFO 3310 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-04 23:04:34.947  INFO 3310 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-10-04 23:04:34.959  INFO 3310 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 1.952 seconds (JVM running for 2.539)
+2021-10-04 23:04:38.792  INFO 3310 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-04 23:04:38.794  INFO 3310 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-04 23:04:38.796  INFO 3310 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-10-04 23:04:40.677  INFO 3310 --- [http-nio-5000-exec-1] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 6464d515-4509-4dc1-bad1-500e695364ca
+2021-10-04 23:04:56.138  INFO 3310 --- [http-nio-5000-exec-7] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 0e3653c3-9ba8-4722-9174-b35754c700b1
+2021-10-04 23:04:56.995  INFO 3310 --- [http-nio-5000-exec-2] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 74bb7380-a656-4f5a-8d3f-61f7ef41481b
+2021-10-04 23:04:58.687  INFO 3310 --- [http-nio-5000-exec-5] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 572a7958-3df5-4ab7-bd5a-b694a54c28bb
+2021-10-04 23:06:34.636  INFO 3310 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-10-04 23:06:54.140  INFO 3370 --- [main] com.nextken.rapi.RapiApplication         : Starting RapiApplication using Java 13.0.2 on Erdems-MBP.cable.rcn.com with PID 3370 (/Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01/target/classes started by erdemyilmaz in /Users/erdemyilmaz/Desktop/JAVAPROJECTS/simpleRest0/simplerest01)
+2021-10-04 23:06:54.145  INFO 3370 --- [main] com.nextken.rapi.RapiApplication         : No active profile set, falling back to default profiles: default
+2021-10-04 23:06:55.029  INFO 3370 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2021-10-04 23:06:55.037  INFO 3370 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-04 23:06:55.038  INFO 3370 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-10-04 23:06:55.096  INFO 3370 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-10-04 23:06:55.096  INFO 3370 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 866 ms
+2021-10-04 23:06:55.615  INFO 3370 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-10-04 23:06:55.770  INFO 3370 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2021-10-04 23:06:55.786  INFO 3370 --- [main] com.nextken.rapi.RapiApplication         : Started RapiApplication in 2.187 seconds (JVM running for 2.865)
+2021-10-04 23:06:57.158  INFO 3370 --- [http-nio-5000-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-04 23:06:57.166  INFO 3370 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-10-04 23:06:57.167  INFO 3370 --- [http-nio-5000-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-10-04 23:06:57.659  INFO 3370 --- [http-nio-5000-exec-2] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 29b44c13-7477-4fa7-be99-174841c86e44
+2021-10-04 23:07:39.367  INFO 3370 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

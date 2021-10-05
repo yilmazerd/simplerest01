@@ -55,5 +55,10 @@ controller names cleanedup
 cross origin clean up
 remove compiler requirement in the header
 
+SMP-17
+Clean up run service so it doesn't write files to disk
+Clean up old run controller
+
+
 Code cleanup
 Validation
