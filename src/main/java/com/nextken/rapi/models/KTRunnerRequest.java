@@ -43,6 +43,31 @@ public class KTRunnerRequest {
 
     }
 
+    public static String codeCleanup(String codeBulk) {
+            char[] myChars = codeBulk.toCharArray();
+            String newString = "";
+            Map<Character, String> map = new HashMap<>();
+            map.put('\b', "\\b");
+            map.put('\f', "\\f");
+            map.put('\n', "\\n");
+            map.put('\r', "\\r");
+            map.put('\t', "\\t");
+            map.put('\'', "\\'");
+            map.put('\"', "\\\"");
+            map.put('\\', "\\\\");
+
+            for (char c:myChars) {
+
+                if (map.get(c)!=null) {
+                    newString += map.get(c);
+                } else {
+                    newString += c;
+                }
+            }
+
+            return newString;
+    }
+
     private String setRequest() {
         char[] myChars = codeBulk.toCharArray();
         String newString = "";

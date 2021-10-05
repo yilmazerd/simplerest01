@@ -76,19 +76,19 @@ public class RunService {
 
     public ResponseEntity<Object> runKT(UUID codeId, String requestedCode) throws Exception {
 
+        //requestedCode = KTRunnerRequest.codeCleanup(requestedCode);
         RunRequest runRequest = new RunRequest(codeId, requestedCode);
 
         CodeBlock codeBlock = codeBlockService.read(runRequest.getCodeBlockId());
+        codeBlock = codeBlock.addUsersCode(runRequest.getCodeString());
 
         String codeBulk = codeBlock.getCode();
-
 
         KTRunnerRequest ktRunnerRequest = new KTRunnerRequest(codeBulk);
         JsonNode jsonNode = ktRunnerRequest.getJson();
         RestTemplate restTemplate = new RestTemplate();
 
         URI uri = new URI("https://a4m4a452gc.execute-api.us-east-1.amazonaws.com/QA");
-
 
         //HttpEntity<JsonNode> requestEntity = new HttpEntity<JsonNode>(null, jsonNode);
         HttpEntity<JsonNode> entity = new HttpEntity<>(jsonNode);

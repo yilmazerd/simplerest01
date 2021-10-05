@@ -31,7 +31,7 @@ public class TempForwardController {
     private static final String DELAY_HEADER = "responsedelay";
 
     // All controllers return the same
-    @PostMapping(path = "/run/{id}", produces = "application/json")
+    @RequestMapping(path = "/v1/run/{id}", produces = "application/json")
     public ResponseEntity<Object> postController(
             @Nullable @RequestBody String requestedCode,
             @RequestParam(name = DELAY_HEADER, required = false) String delayHeader,
