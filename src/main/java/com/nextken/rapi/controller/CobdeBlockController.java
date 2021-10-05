@@ -63,10 +63,7 @@ public class CobdeBlockController {
     public ResponseEntity<CBResponse> codeControllerResponse(
             @RequestBody String cbRequestIn,
             @RequestHeader Map<String, String> headers) throws Exception {
-        System.out.println("Received codeblock2 request");
-        headers.keySet().forEach(k-> {
-            System.out.println("key: " + k + " " + headers.get(k));
-        });
+
 
         if ( cbRequestIn.length() > INPUT_CODE_CHAR_LIMIT) {
             throw new IllegalArgumentException("Input can not exceed " + INPUT_CODE_CHAR_LIMIT + " characters");

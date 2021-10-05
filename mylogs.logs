@@ -366,3 +366,4 @@ java.lang.IllegalArgumentException: Input can not exceed 100 characters
 2021-10-04 22:58:40.305  INFO 3156 --- [http-nio-5000-exec-1] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 57a2eb37-70bd-4644-9ca8-765efcd47ac5
 2021-10-04 22:58:41.443  INFO 3156 --- [http-nio-5000-exec-5] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 976c33b9-ef1b-42d1-93b6-5a96f0c76055
 2021-10-04 22:58:42.058  INFO 3156 --- [http-nio-5000-exec-8] c.nextken.rapi.service.CodeBlockService  : Created codeBlock with Id: 1579f67c-c1f2-4e7c-929d-d1173dcacecf
+2021-10-04 23:00:51.866  INFO 3156 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
