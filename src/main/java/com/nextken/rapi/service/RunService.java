@@ -15,9 +15,13 @@ import org.springframework.web.client.RestTemplate;
 import java.io.*;
 import java.net.URI;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 public class RunService {
+
+    private final Logger LOGGER = Logger.getLogger(this.getClass().getName());
 
     //TODO: Be able to take request command
     //TODO: Be able to return status code as well as response
@@ -123,12 +127,13 @@ public class RunService {
         try {
             File myObj = new File(fileName);
             if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
+                LOGGER.log(Level.INFO, "File created: " + myObj.getName());
             } else {
                 System.out.println("File already exists.");
+                LOGGER.log(Level.INFO, "File already exists. ");
             }
         } catch (IOException e) {
-            System.out.println("An error occurred.");
+            LOGGER.log(Level.WARNING, "File already exists. ");
             e.printStackTrace();
         }
 
