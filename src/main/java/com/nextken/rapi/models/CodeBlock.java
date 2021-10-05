@@ -53,9 +53,8 @@ public class CodeBlock {
     public CodeBlock addUsersCode(String usersCode) {
         String newCode = this.getCode();
         if (StringUtils.isNotBlank(usersCode)) {
-            String usersCodeCleaned = cleanCode(usersCode);
-            newCode = this.getCode().replace(INSTANT_FUNCTION_STRING_ARRANGER, usersCodeCleaned);
-            int s = 3;
+            //String usersCodeCleaned = cleanCode(usersCode);
+            newCode = this.getCode().replace(INSTANT_FUNCTION_STRING_ARRANGER, usersCode);
         };
         //CodeBlock(String code, CBCompiler cbCompiler, Instant timestamp, UUID codeBlockId)
         return new CodeBlock(newCode, this.getCompiler(), this.getTimeStamp(), this.getCodeBlockId());

@@ -68,7 +68,13 @@ public class RunController {
     private ResponseEntity<Object> controllerProcess(UUID codeId, String requestedCode, String delayHeader){
 
         delayHeader = ObjectUtils.firstNonNull(delayHeader,"0");
-        int delay = Integer.valueOf(delayHeader);
+        int delay = 0;
+        try {
+            delay = Integer.valueOf(delayHeader);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid delay");
+        }
+
 
         if (delay>0) {
             try {
