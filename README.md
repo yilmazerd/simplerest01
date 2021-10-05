@@ -56,8 +56,9 @@ cross origin clean up
 remove compiler requirement in the header
 
 SMP-17
-Clean up run service so it doesn't write files to disk
-Clean up old run controller
+Clean up run service so it doesn't write files to disk 
+(This one can wait, the service has some delay and response type implementations)
+Clean up old run controller (DONE)
 
 
 Code cleanup

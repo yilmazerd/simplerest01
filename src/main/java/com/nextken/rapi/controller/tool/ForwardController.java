@@ -1,4 +1,4 @@
-package com.nextken.rapi.controller;
+package com.nextken.rapi.controller.tool;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
@@ -13,12 +13,14 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.net.URI;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/*
+This has served the purpose of testing lambda. Leaving it for testing purposes
+ */
+@Deprecated
 @RestController
 public class ForwardController {
 
