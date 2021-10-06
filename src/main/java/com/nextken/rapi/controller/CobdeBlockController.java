@@ -30,7 +30,7 @@ public class CobdeBlockController {
 
     //@CrossOrigin(origins = {"null", "http://localhost:63342", "https://instantfunction.com","localhost:63342"})
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping(path = "/code", produces = "application/json")
+    @PostMapping(path = "v1/code", produces = "application/json")
     public ResponseEntity<CBResponse> codeController(
             @RequestBody String cbRequestIn,
             @RequestHeader Map<String, String> headers) throws Exception {
